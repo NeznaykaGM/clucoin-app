@@ -36,6 +36,7 @@
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.3",
+    "tsparticles": "^1.27.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
