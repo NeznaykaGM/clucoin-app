@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { MainLayout } from '@md-modules/shared/layouts/main';
+import Home from '@md-modules/clu-coin/home';
 
-const Home = () => {
-  return <MainLayout></MainLayout>;
+const HomePage = () => {
+  return (
+    <MainLayout>
+      <Home />
+    </MainLayout>
+  );
 };
 
-export default Home;
+export default HomePage;

@@ -15,6 +15,10 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     position: relative;
-    font-size: 16px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0px;
+  }
   }
 `;

@@ -1,14 +1,14 @@
 import styled, { css } from 'styled-components';
 // local
-import { Margin, Padding } from '@md-shared/types/css';
-import { getMarginStyle, getPaddingStyle } from '@md-shared/helpers/styled';
+import { Margin } from '@md-shared/types/css';
+import { getMarginStyle } from '@md-shared/helpers/styled';
 
 export interface WrapperStyle {
   height?: string;
   width?: string;
 }
 
-export type ButtonStyle = WrapperStyle & Margin & Padding;
+export type ButtonStyle = WrapperStyle & Margin;
 
 export const Wrapper = styled.button<{
   buttonStyle?: ButtonStyle;
@@ -58,7 +58,6 @@ export const Wrapper = styled.button<{
 
   ${({ theme }) => theme.templates.centerContent};
   ${({ buttonStyle }) => buttonStyle && getMarginStyle('buttonStyle')};
-  ${({ buttonStyle }) => buttonStyle && getPaddingStyle('buttonStyle')};
 
   ${({ isLoading }) =>
     isLoading &&

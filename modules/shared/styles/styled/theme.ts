@@ -8,10 +8,12 @@ export const colors = {
   gray400: '#343A40',
   gary800: '#0A0A0A',
   // pink
+  pink100: '#ff62c2',
   pink300: '#D0458D',
   pink400: '#FF1493',
   // other
-  white: '#fff'
+  white: '#fff',
+  black: '#000'
 };
 
 export const templates = {
