@@ -4,3 +4,11 @@ export const menuItems = [
   { l: 'White Paper', h: '/white-paper' },
   { l: 'Roadmap', h: '/roadmap' }
 ];
+
+export const footerMenuItems = [
+  { l: 'Tokens', h: '/' },
+  { l: 'Roadmap', h: '/roadmap' },
+  { l: 'Creator', h: '/white-paper' },
+  { l: 'Contacts', h: '/roadmap' },
+  { l: 'White Paper', h: '/white-paper' }
+];

@@ -4,15 +4,21 @@ import { useRouter } from 'next/router';
 // constants
 import { menuItems } from './constants';
 // view components
+import Backdrop from '@md-ui/headers/main/back-drop';
 import { Button } from '@md-ui/button/main';
 import { Logo } from '@md-ui/logos/main';
 import { MenuItem } from '@md-ui/menu-items/main';
 // views
-import { IWrapper, LWrapper, RWrapper, Wrapper } from './views';
+import { IconWrapper, IWrapper, Line1, Line2, Line3, LWrapper, MenuBtn, RWrapper, Wrapper } from './views';
 
 const BUTTON_STYLES = { ml: 30 };
 
-const Header = () => {
+interface Props {
+  expanded: boolean;
+  toggleMenu: () => void;
+}
+
+const Header: React.FC<Props> = ({ expanded, toggleMenu }) => {
   const { pathname } = useRouter();
   const [isScroll, setIsScroll] = React.useState(false);
 
@@ -44,19 +50,31 @@ const Header = () => {
   };
 
   return (
-    <Wrapper isScroll={isScroll}>
-      <IWrapper>
-        <LWrapper>
-          <Logo />
-        </LWrapper>
-        <RWrapper>
-          {menuItems.map(({ l, h }) => (
-            <MenuItem key={l} href={h} active={isRouteActive(h)} label={l} />
-          ))}
-          <Button buttonStyle={BUTTON_STYLES}>Buy Now</Button>
-        </RWrapper>
-      </IWrapper>
-    </Wrapper>
+    <>
+      <Wrapper isScroll={isScroll}>
+        <IWrapper>
+          <LWrapper>
+            <Logo />
+          </LWrapper>
+
+          <RWrapper isActive={expanded}>
+            {menuItems.map(({ l, h }) => (
+              <MenuItem key={l} href={h} active={isRouteActive(h)} label={l} />
+            ))}
+            <Button buttonStyle={BUTTON_STYLES}>Buy Now</Button>
+          </RWrapper>
+
+          <IconWrapper>
+            <MenuBtn onClick={toggleMenu} isActive={expanded}>
+              <Line1 isActive={expanded}></Line1>
+              <Line2 isActive={expanded}></Line2>
+              <Line3 isActive={expanded}></Line3>
+            </MenuBtn>
+          </IconWrapper>
+        </IWrapper>
+      </Wrapper>
+      {expanded && <Backdrop onClick={toggleMenu} />}
+    </>
   );
 };
 

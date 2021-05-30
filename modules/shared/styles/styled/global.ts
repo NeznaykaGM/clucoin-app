@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     padding: 0;
+    overflow-x: hidden;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     position: relative;
@@ -19,6 +20,11 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 14px;
     font-weight: 400;
     letter-spacing: 0px;
+    color: white;
   }
+  
+  p {
+    padding: 0;
+    margin: 0;
   }
 `;
