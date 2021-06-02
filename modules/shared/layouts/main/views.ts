@@ -16,4 +16,11 @@ export const HeaderBanner = styled.div`
   background-image: url('/static/images/sub-page-banner.svg');
   background-attachment: fixed;
   background-repeat: no-repeat;
+  text-align: center;
+`;
+
+export const HeaderTitle = styled.p`
+  font-size: 50px;
+  font-weight: 600;
+  padding-bottom: 10px;
 `;

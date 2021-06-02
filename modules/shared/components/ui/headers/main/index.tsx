@@ -73,7 +73,7 @@ const Header: React.FC<Props> = ({ expanded, toggleMenu }) => {
           </IconWrapper>
         </IWrapper>
       </Wrapper>
-      {expanded && <Backdrop onClick={toggleMenu} />}
+      <Backdrop expanded={expanded} onClick={toggleMenu} />
     </>
   );
 };

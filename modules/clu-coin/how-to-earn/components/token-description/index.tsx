@@ -13,7 +13,7 @@ import {
   TokensTitle,
   Wrapper,
   PinkTokeListItem
-} from '@md-modules/clu-coin/home/how-to-buy/components/token-description/views';
+} from '@md-modules/clu-coin/how-to-earn/components/token-description/views';
 
 const TokenDescription = () => {
   return (
