@@ -62,6 +62,11 @@ export const Title = styled.p`
   font-size: 40px;
   font-weight: 600;
   padding-bottom: 18px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+    font-size: 30px;
+  }
 `;
 
 export const InfoTitleTokenHead = styled.p`
@@ -87,6 +92,10 @@ export const BuyListItem = styled.li`
 export const SubTitle = styled.p`
   max-width: 580px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
 `;
 
 export const TextPinkListItem = styled.a`

@@ -8,7 +8,7 @@ export const Wrapper = styled.div<{ expanded: boolean }>`
   right: 0;
   top: 0;
   z-index: 99;
-  margin-top: 70px;
+  margin-top: 55px;
   transition: height 0.5s ease;
 
   height: ${({ expanded }) => (expanded ? '100%' : '0')};

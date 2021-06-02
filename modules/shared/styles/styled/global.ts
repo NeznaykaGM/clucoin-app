@@ -20,7 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     color: white;
     line-height: 24px;
     font-size: 14px;
-    font-family: 'Lato', sans-serif;
     letter-spacing: 0px;
   }
   

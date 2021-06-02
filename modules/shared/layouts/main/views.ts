@@ -23,4 +23,8 @@ export const HeaderTitle = styled.p`
   font-size: 50px;
   font-weight: 600;
   padding-bottom: 10px;
+
+  @media (max-width: 748px) {
+    font-size: 40px;
+  }
 `;
