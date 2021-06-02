@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
   margin: 0 auto;
   flex-direction: column;
 `;
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled.div<{ isUserSee: boolean }>`
   display: flex;
   flex-direction: row;
   padding-bottom: 40px;
@@ -21,6 +21,20 @@ export const ContentWrapper = styled.div`
     padding: 25px;
     text-align: center;
     ${({ theme }) => theme.templates.centerContent}
+  }
+
+  opacity: ${({ isUserSee }) => (isUserSee ? '1' : '0')};
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  animation: ${({ isUserSee }) => (isUserSee ? 'infoSlideUp 1s forwards' : 'none')};
+
+  @keyframes infoSlideUp {
+    0% {
+      transform: translateY(200px);
+    }
+    100% {
+      transform: translateY(0);
+    }
   }
 `;
 
@@ -49,8 +63,21 @@ export const PinkTitle = styled(Title)`
   }
 `;
 
-export const CardsWrapper = styled.div`
+export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
   display: grid;
   grid-gap: 30px;
+  transition: opacity 1s ease;
+  opacity: ${({ isUserSee }) => (isUserSee ? '1' : '0')};
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  animation: ${({ isUserSee }) => (isUserSee ? 'cardsSlideUp 1s forwards' : 'none')};
+
+  @keyframes cardsSlideUp {
+    0% {
+      transform: translateY(200px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 `;

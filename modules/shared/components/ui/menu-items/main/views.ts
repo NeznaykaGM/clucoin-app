@@ -3,7 +3,7 @@ import { linkButtonPresets, LinkButtonPresets } from '@md-ui/menu-items/main/pre
 
 export const MenuI = styled.div<{ active: boolean; preset?: LinkButtonPresets }>`
   position: relative;
-  margin: 0px 26px;
+  margin: 0px 25px;
   transition: 1s;
 
   a {

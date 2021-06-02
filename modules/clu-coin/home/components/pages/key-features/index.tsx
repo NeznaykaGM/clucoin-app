@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { Waypoint } from 'react-waypoint';
 // views
 import {
   Title,
@@ -11,9 +13,11 @@ import {
 import InfoCard from '@md-modules/clu-coin/home/components/pages/key-features/components/card';
 
 const KeyFeatures = () => {
+  const [isUserSee, setIsUserSee] = React.useState(false);
+
   return (
     <Wrapper>
-      <ContentWrapper>
+      <ContentWrapper isUserSee={isUserSee}>
         <PinkTitle>
           Key <Title>Features</Title>
         </PinkTitle>
@@ -24,23 +28,25 @@ const KeyFeatures = () => {
         </SubTitle>
       </ContentWrapper>
 
-      <CardsWrapper>
-        <InfoCard
-          src='static/images/safe.png'
-          title='Safe Invest'
-          subTitle='CluCoin holders are rewarded with 5% return each time someone sells. HOLD & EARN.'
-        />
-        <InfoCard
-          src='static/images/present.png'
-          title='Community'
-          subTitle='Join our CLUmmunity and meet likeminded people who love helping others and having fun!!'
-        />
-        <InfoCard
-          src='static/images/cash.png'
-          title='Charity Focus'
-          subTitle={"Part of CluCoin's mission is to help charities around the world."}
-        />
-      </CardsWrapper>
+      <Waypoint onEnter={() => setIsUserSee(true)}>
+        <CardsWrapper isUserSee={isUserSee}>
+          <InfoCard
+            src='static/images/safe.png'
+            title='Safe Invest'
+            subTitle='CluCoin holders are rewarded with 5% return each time someone sells. HOLD & EARN.'
+          />
+          <InfoCard
+            src='static/images/present.png'
+            title='Community'
+            subTitle='Join our CLUmmunity and meet likeminded people who love helping others and having fun!!'
+          />
+          <InfoCard
+            src='static/images/cash.png'
+            title='Charity Focus'
+            subTitle={"Part of CluCoin's mission is to help charities around the world."}
+          />
+        </CardsWrapper>
+      </Waypoint>
     </Wrapper>
   );
 };

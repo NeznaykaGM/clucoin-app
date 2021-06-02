@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  min-height: 100vh;
+  height: 100%;
+  padding-bottom: 200px;
   color: rgb(255, 255, 255);
   overflow: hidden;
   flex-direction: column;
@@ -50,4 +51,38 @@ export const MIWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   width: 352px;
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
+`;
+
+export const IWrapper = styled.div`
+  padding-bottom: 10px;
+`;
+
+export const CopyrightWrapper = styled.div`
+  width: 100%;
+  padding-top: 50px;
+  justify-content: space-between;
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+export const CopyrightMenuWrapper = styled.div`
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+  }
+`;
+
+export const MenuItemWrapper = styled.div`
+  border-right: 2px solid #5d19db;
 `;

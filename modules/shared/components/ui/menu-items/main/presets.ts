@@ -35,7 +35,6 @@ export const linkButtonPresets = {
   small: css`
     font-size: 14px;
 
-    padding-bottom: 10px;
     a {
       text-decoration: none;
       transition: all 0.3s ease-in-out;

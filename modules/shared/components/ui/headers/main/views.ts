@@ -20,10 +20,10 @@ export const IWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0px 160px;
+  padding: 0px 10%;
 
-  @media (max-width: 768px) {
-    padding: 0;
+  @media (max-width: 1250px) {
+    padding: 0px 2%;
   }
 `;
 
@@ -51,7 +51,7 @@ export const RWrapper = styled.div<{ isActive: boolean }>`
 
   ${({ theme }) => theme.templates.centerItems};
 
-  @media screen and (max-width: 1250px) {
+  @media (max-width: 1000px) {
     display: none;
   }
 `;
@@ -59,6 +59,11 @@ export const RWrapper = styled.div<{ isActive: boolean }>`
 export const IconWrapper = styled('div')`
   top: 0;
   z-index: 1000;
+  display: none;
+
+  @media (max-width: 1000px) {
+    display: block;
+  }
 `;
 
 export const MenuBtn = styled.div<{ isActive: boolean }>`

@@ -12,3 +12,9 @@ export const footerMenuItems = [
   { l: 'Contacts', h: '/roadmap' },
   { l: 'White Paper', h: '/white-paper' }
 ];
+
+export const copyrightMenuItems = [
+  { l: 'Terms & Condition', h: '/' },
+  { l: 'Privacy Policy', h: '/roadmap' },
+  { l: 'Contact Us', h: '/white-paper' }
+];

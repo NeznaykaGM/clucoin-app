@@ -9,10 +9,6 @@ export const Wrapper = styled.div`
   top: 0;
   z-index: 99;
   padding-top: 55px;
-
-  @media (min-width: 768px) {
-    display: none;
-  }
 `;
 
 export const IWrapper = styled.div`

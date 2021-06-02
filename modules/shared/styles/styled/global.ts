@@ -16,11 +16,16 @@ export const GlobalStyles = createGlobalStyle`
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     position: relative;
+    font-weight: 400;
+    color: white;
     line-height: 24px;
     font-size: 14px;
-    font-weight: 400;
+    font-family: 'Lato', sans-serif;
     letter-spacing: 0px;
-    color: white;
+  }
+  
+  h1  {
+    font-size: 2.5rem;
   }
   
   p {
