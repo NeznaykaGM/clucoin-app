@@ -31,10 +31,10 @@ const Welcome = () => {
       },
       particles: {
         number: {
-          value: 80,
+          value: 120,
           density: {
             enable: true,
-            area: 350
+            area: 410
           }
         },
         color: {
@@ -71,7 +71,7 @@ const Welcome = () => {
         links: {
           enable: true,
           distance: 100,
-          color: `${theme.colors.pink300}`,
+          color: `${theme.colors.pink100}`,
           opacity: 0.4,
           width: 1
         },

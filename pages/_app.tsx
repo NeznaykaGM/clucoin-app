@@ -1,6 +1,6 @@
 import * as React from 'react';
 // libs
-import { isBrowser, isMobile } from 'react-device-detect';
+import { isMobile } from 'react-device-detect';
 // components
 import Head from 'next/head';
 // providers

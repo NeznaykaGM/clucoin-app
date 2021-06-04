@@ -1,4 +1,6 @@
 import React from 'react';
+// libs
+import { Waypoint } from 'react-waypoint';
 import {
   BuyList,
   BuyListItem,
@@ -17,6 +19,8 @@ import {
 import PurchaseCard from '@md-ui/card/purchase-card';
 
 const TokenInfo = () => {
+  const [isUserSee, setIsUserSee] = React.useState(false);
+
   return (
     <Wrapper>
       <TitleWrapper>
@@ -28,7 +32,7 @@ const TokenInfo = () => {
       </TitleWrapper>
 
       <Container>
-        <InfoWrapper>
+        <InfoWrapper isUserSee={isUserSee}>
           <InfoTitleTokenHead>How to Buy CluCoin</InfoTitleTokenHead>
           <InfoSubTitleTokenHead>PancakeSwap Instructions</InfoSubTitleTokenHead>
 
@@ -55,9 +59,11 @@ const TokenInfo = () => {
           <FooterInfoWrapper>HODL!</FooterInfoWrapper>
         </InfoWrapper>
 
-        <RightSectionWrapper isUserSee={true}>
-          <PurchaseCard />
-        </RightSectionWrapper>
+        <Waypoint onEnter={() => setIsUserSee(true)}>
+          <RightSectionWrapper isUserSee={isUserSee}>
+            <PurchaseCard />
+          </RightSectionWrapper>
+        </Waypoint>
       </Container>
     </Wrapper>
   );

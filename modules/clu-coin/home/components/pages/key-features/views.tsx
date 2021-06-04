@@ -30,7 +30,7 @@ export const ContentWrapper = styled.div<{ isUserSee: boolean }>`
 
   @keyframes infoSlideUp {
     0% {
-      transform: translateY(200px);
+      transform: translateY(250px);
     }
     100% {
       transform: translateY(0);
@@ -74,7 +74,7 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
 
   @keyframes cardsSlideUp {
     0% {
-      transform: translateY(200px);
+      transform: translateY(450px);
     }
     100% {
       transform: translateY(0);

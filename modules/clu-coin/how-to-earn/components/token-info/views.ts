@@ -10,10 +10,28 @@ export const Wrapper = styled.div`
   width: 100%;
 `;
 
-export const InfoWrapper = styled.div`
+export const InfoWrapper = styled.div<{ isUserSee: boolean }>`
   min-height: 585px;
   padding-right: 15px;
   padding-left: 15px;
+
+  transition: opacity 1s ease;
+  opacity: ${({ isUserSee }) => (isUserSee ? '1' : '0')};
+  animation: ${({ isUserSee }) => (isUserSee ? 'leftSlideIn 1s forwards' : 'none')};
+
+  @keyframes leftSlideIn {
+    0% {
+      transform: translateX(-200px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: 992px) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
 
   @media (min-width: 992px) {
     flex: 0 0 50%;
@@ -40,8 +58,9 @@ export const Container = styled.div`
     content: ' ';
     position: absolute;
     left: 0px;
-    width: 50%;
-    height: 35%;
+    top: 0px;
+    width: 100%;
+    height: 65%;
     background: url(/static/images/robot.png) left center no-repeat;
     background-size: 300px;
     opacity: 0.2;
