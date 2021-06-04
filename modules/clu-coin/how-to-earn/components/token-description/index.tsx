@@ -9,11 +9,11 @@ import {
   TokeList,
   TokeListItem,
   TokenInformationWrapper,
-  TokenItemWrapper,
   TokensTitle,
   Wrapper,
   PinkTokeListItem
 } from '@md-modules/clu-coin/how-to-earn/components/token-description/views';
+import TokenItem from '@md-modules/clu-coin/how-to-earn/components/token-description/components/token-item';
 
 const TokenDescription = () => {
   return (
@@ -36,30 +36,11 @@ const TokenDescription = () => {
         <TokenInformationWrapper>
           <TokensTitle>Information About Tokens</TokensTitle>
 
-          <TokenItemWrapper>
-            <label>Token Name</label>
-            <span>CluCoin</span>
-          </TokenItemWrapper>
-
-          <TokenItemWrapper>
-            <label>Nominal Price</label>
-            <span>1CLU = ???</span>
-          </TokenItemWrapper>
-
-          <TokenItemWrapper>
-            <label>Total Number of Token Produced</label>
-            <span>1,000,000,000,000,000</span>
-          </TokenItemWrapper>
-
-          <TokenItemWrapper>
-            <label>Burn Smart Contract</label>
-            <span>CluCoin</span>
-          </TokenItemWrapper>
-
-          <TokenItemWrapper>
-            <label>Type of Token</label>
-            <span>BEP-20</span>
-          </TokenItemWrapper>
+          <TokenItem title='Token Name' subTitle='CluCoin' />
+          <TokenItem title='Nominal Price' subTitle='1,000,000,000,000,000' />
+          <TokenItem title='Total Number of Token Produced' subTitle='CluCoin' />
+          <TokenItem title='Burn Smart Contract' subTitle='CluCoin' />
+          <TokenItem title='Type of Token' subTitle='BEP-20' />
         </TokenInformationWrapper>
 
         <DistributionProceedsWrapper>

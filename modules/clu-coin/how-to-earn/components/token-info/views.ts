@@ -50,11 +50,10 @@ export const Container = styled.div`
   @media screen and (max-width: 1250px) {
     padding: 10px;
     overflow: visible;
-    text-align: center;
     margin-bottom: 30px;
     flex-direction: column;
     justify-content: center;
-    max-width: 960px;
+    align-items: center;
   }
 `;
 
@@ -75,14 +74,27 @@ export const InfoTitleTokenHead = styled.p`
   font-weight: 600;
   padding-bottom: 5px;
   letter-spacing: 2px;
+
+  @media (max-width: 1250px) {
+    text-align: center;
+  }
 `;
 
 export const InfoSubTitleTokenHead = styled.p`
   color: ${({ theme }) => theme.colors.pink300};
   font-weight: 700;
+
+  @media (max-width: 1250px) {
+    text-align: center;
+  }
 `;
 
-export const BuyList = styled.ol``;
+export const BuyList = styled.ol`
+  @media (max-width: 1250px) {
+    ${({ theme }) => theme.templates.centerItems};
+    flex-direction: column;
+  }
+`;
 
 export const BuyListItem = styled.li`
   max-width: 545px;
@@ -123,7 +135,7 @@ export const RightSectionWrapper = styled.div<{ isUserSee: boolean }>`
     }
   }
 
-  @media (max-width: 1250px) {
-    ${({ theme }) => theme.templates.centerItems};
-  }
+  // @media (max-width: 1250px) {
+  //   ${({ theme }) => theme.templates.centerItems};
+  // }
 `;

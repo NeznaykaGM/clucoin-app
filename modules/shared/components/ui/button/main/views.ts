@@ -38,6 +38,10 @@ export const Wrapper = styled.button<{
 
   &:hover {
     transform: translateY(-5px);
+
+    @media screen and (max-width: 768px) {
+      transform: translateY(0px);
+    }
   }
 
   :active {

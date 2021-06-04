@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  z-index: 1;
+  z-index: 0;
   opacity: 1;
   transform: translateZ(0px);
   justify-content: space-around;

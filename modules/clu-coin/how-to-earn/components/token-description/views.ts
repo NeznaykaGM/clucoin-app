@@ -12,6 +12,10 @@ export const TitleWrapper = styled.div`
   margin-right: -15px;
   padding-bottom: 65px;
   justify-content: center;
+
+  @media (max-width: 1250px) {
+    margin: 0;
+  }
 `;
 
 export const Title = styled.p`
@@ -71,11 +75,4 @@ export const TokenInformationWrapper = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   flex: 2;
-`;
-
-export const TokenItemWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  position: relative;
 `;
