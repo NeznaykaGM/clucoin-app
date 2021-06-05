@@ -13,11 +13,11 @@ import {
 
 interface Props {
   src?: string;
-  title: string;
-  subTitle: string;
+  frontEndTitle: string;
+  frontEndSubTitle: string;
 }
 
-const InfoCard: React.FC<Props> = ({ src, title, subTitle }) => {
+const InfoCard: React.FC<Props> = ({ src, frontEndTitle, frontEndSubTitle }) => {
   const [isFlipped, setIsFlipped] = React.useState(false);
 
   const toggle = () => setIsFlipped((prevState) => !prevState);
@@ -29,8 +29,8 @@ const InfoCard: React.FC<Props> = ({ src, title, subTitle }) => {
           <Image src={src} alt='icon' />
 
           <ContentWrapper>
-            <Title>{title}</Title>
-            <SubTitle>{subTitle}</SubTitle>
+            <Title>{frontEndTitle}</Title>
+            <SubTitle>{frontEndSubTitle}</SubTitle>
           </ContentWrapper>
         </Content>
 

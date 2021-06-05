@@ -80,4 +80,8 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
       transform: translateY(0);
     }
   }
+
+  @media (max-width: 1250px) {
+    padding: 0px 20px;
+  }
 `;

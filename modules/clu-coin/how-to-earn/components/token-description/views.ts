@@ -21,6 +21,10 @@ export const TitleWrapper = styled.div`
 export const Title = styled.p`
   font-size: 40px;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 export const DistributionWrapper = styled.div`
@@ -32,6 +36,9 @@ export const DistributionProceedsWrapper = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   flex: 1;
+  @media (max-width: 1250px) {
+    margin-top: 20px;
+  }
 `;
 
 export const TokeList = styled.div`
@@ -75,4 +82,8 @@ export const TokenInformationWrapper = styled.div`
   padding-right: 15px;
   padding-left: 15px;
   flex: 2;
+
+  @media (max-width: 1250px) {
+    margin-top: 20px;
+  }
 `;

@@ -32,18 +32,18 @@ const KeyFeatures = () => {
         <CardsWrapper isUserSee={isUserSee}>
           <InfoCard
             src='static/images/safe.png'
-            title='Safe Invest'
-            subTitle='CluCoin holders are rewarded with 5% return each time someone sells. HOLD & EARN.'
+            frontEndTitle='Safe Invest'
+            frontEndSubTitle='CluCoin holders are rewarded with 5% return each time someone sells. HOLD & EARN.'
           />
           <InfoCard
             src='static/images/present.png'
-            title='Community'
-            subTitle='Join our CLUmmunity and meet likeminded people who love helping others and having fun!!'
+            frontEndTitle='Community'
+            frontEndSubTitle='Join our CLUmmunity and meet likeminded people who love helping others and having fun!!'
           />
           <InfoCard
             src='static/images/cash.png'
-            title='Charity Focus'
-            subTitle={"Part of CluCoin's mission is to help charities around the world."}
+            frontEndTitle='Charity Focus'
+            frontEndSubTitle={"Part of CluCoin's mission is to help charities around the world."}
           />
         </CardsWrapper>
       </Waypoint>

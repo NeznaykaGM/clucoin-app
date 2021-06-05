@@ -9,12 +9,6 @@ export const Wrapper = styled.div`
   align-items: center;
   z-index: 1;
   display: flex;
-  transform: translateZ(0px);
-
-  &:before {
-    position: absolute;
-    inset: 0px;
-  }
 `;
 
 export const Container = styled.div`

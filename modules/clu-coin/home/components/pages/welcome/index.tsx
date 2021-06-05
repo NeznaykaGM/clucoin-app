@@ -34,29 +34,17 @@ const Welcome = () => {
           value: 120,
           density: {
             enable: true,
-            area: 410
+            area: 450
           }
         },
         color: {
-          value: `${theme.colors.pink400}`,
-          animation: {
-            enable: true,
-            speed: 0.5,
-            sync: true
-          }
+          value: `${theme.colors.pink400}`
         },
         stroke: {
           width: 0
         },
         opacity: {
-          value: 0.5,
-          random: false,
-          animation: {
-            enable: false,
-            speed: 1,
-            minimumValue: 0.1,
-            sync: false
-          }
+          value: 0.5
         },
         size: {
           value: 2,
@@ -73,7 +61,7 @@ const Welcome = () => {
           distance: 100,
           color: `${theme.colors.pink100}`,
           opacity: 0.4,
-          width: 1
+          width: 0.8
         },
         move: {
           enable: true,
@@ -120,7 +108,7 @@ const Welcome = () => {
           }
         }
       },
-      detectRetina: true,
+      detectRetina: false,
       background: {
         color: '#000000',
         image: '',
