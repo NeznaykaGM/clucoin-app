@@ -28,7 +28,6 @@ export const SWrapper = styled(Slider)`
   max-width: 600px;
 
   justify-content: center;
-  z-index: 2;
 
   @media screen and (max-width: 768px) {
     padding: 0px;
