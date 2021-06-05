@@ -40,7 +40,7 @@ export const SWrapper = styled(Slider)`
 
 export const ArrowButton = styled.img`
   @media screen and (max-width: 768px) {
-    display: none;
+    display: none !important;
   }
 `;
 

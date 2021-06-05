@@ -16,7 +16,7 @@ export const SliderWrapper = styled.div`
   margin: 0 auto;
 
   @media screen and (max-width: 1200px) {
-    padding: 25px;
+    padding: 25px 5px;
   }
 `;
 
