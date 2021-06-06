@@ -72,6 +72,11 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
 
   animation: ${({ isUserSee }) => (isUserSee ? 'cardsSlideUp 1s forwards' : 'none')};
 
+  a {
+    margin: 0;
+    padding: 0;
+  }
+
   @keyframes cardsSlideUp {
     0% {
       transform: translateY(450px);
@@ -84,4 +89,16 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
   @media (max-width: 1250px) {
     padding: 0px 20px;
   }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  background: ${({ theme }) => theme.colors.gray400};
+
+  padding: 10px;
+  border: 1px solid ${({ theme }) => theme.colors.gary800};
+  max-width: 390px;
+  max-height: 120px;
+  cursor: pointer;
 `;

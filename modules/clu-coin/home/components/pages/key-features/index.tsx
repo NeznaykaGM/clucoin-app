@@ -1,6 +1,8 @@
 import React from 'react';
 // libs
 import { Waypoint } from 'react-waypoint';
+// constants
+import { partnersState } from '@md-modules/clu-coin/home/components/pages/key-features/constants';
 // views
 import {
   Title,
@@ -8,9 +10,9 @@ import {
   PinkTitle,
   SubTitle,
   ContentWrapper,
-  CardsWrapper
+  CardsWrapper,
+  Image
 } from '@md-modules/clu-coin/home/components/pages/key-features/views';
-import InfoCard from '@md-modules/clu-coin/home/components/pages/key-features/components/card';
 
 const KeyFeatures = () => {
   const [isUserSee, setIsUserSee] = React.useState(false);
@@ -19,32 +21,22 @@ const KeyFeatures = () => {
     <Wrapper>
       <ContentWrapper isUserSee={isUserSee}>
         <PinkTitle>
-          Key <Title>Features</Title>
+          Our <Title>Partners</Title>
         </PinkTitle>
 
         <SubTitle>
-          CluCoin is the first token designed with the users and a charity system built straight into its core. We've
-          built a system designed to protect against whales, encourage holding and help charities around the world.
+          We have been on the market for a long time and have already managed to enter into cooperation with large
+          companies, such as:
         </SubTitle>
       </ContentWrapper>
 
       <Waypoint onEnter={() => setIsUserSee(true)}>
         <CardsWrapper isUserSee={isUserSee}>
-          <InfoCard
-            src='static/images/safe.png'
-            frontEndTitle='Safe Invest'
-            frontEndSubTitle='CluCoin holders are rewarded with 5% return each time someone sells. HOLD & EARN.'
-          />
-          <InfoCard
-            src='static/images/present.png'
-            frontEndTitle='Community'
-            frontEndSubTitle='Join our CLUmmunity and meet likeminded people who love helping others and having fun!!'
-          />
-          <InfoCard
-            src='static/images/cash.png'
-            frontEndTitle='Charity Focus'
-            frontEndSubTitle={"Part of CluCoin's mission is to help charities around the world."}
-          />
+          {partnersState.map((i) => (
+            <a key={i.id} href={i.url}>
+              <Image src={i.src} />
+            </a>
+          ))}
         </CardsWrapper>
       </Waypoint>
     </Wrapper>

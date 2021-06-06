@@ -1,13 +1,16 @@
 import * as React from 'react';
 // views
-import { Wrapper, Circle } from './views';
+import { Wrapper } from './views';
 
-const Loader: React.FunctionComponent = () => (
-  <Wrapper>
-    {Array.from(Array(12), (_, i) => i + 1).map((idx) => (
-      <Circle key={idx} index={idx} />
-    ))}
-  </Wrapper>
-);
+const Loader: React.FunctionComponent = () => {
+  return (
+    <Wrapper>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </Wrapper>
+  );
+};
 
 export { Loader };

@@ -2,18 +2,17 @@ import * as React from 'react';
 // components
 import { ErrorMessage } from '@md-shared/components/form/error-message';
 // views
-import { TextInput, Wrapper, Label, InputStyle, WrapperStyle } from './views';
+import { TextInput, Wrapper, Label, InputStyle } from './views';
 
-export interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorText?: string;
   inputStyle?: InputStyle;
   label?: string;
-  wrapperStyle?: WrapperStyle;
 }
 
-const TextField: React.FC<TextFieldProps> = ({ errorText, label, placeholder, wrapperStyle, ...rest }) => {
+const Input: React.FC<InputProps> = ({ errorText, label, placeholder, ...rest }) => {
   return (
-    <Wrapper wrapperStyle={wrapperStyle}>
+    <Wrapper>
       {label && <Label>{label}</Label>}
       <TextInput placeholder={placeholder} isValid={!errorText} {...rest} />
       <ErrorMessage errorText={errorText} />
@@ -21,4 +20,4 @@ const TextField: React.FC<TextFieldProps> = ({ errorText, label, placeholder, wr
   );
 };
 
-export { TextField };
+export { Input };

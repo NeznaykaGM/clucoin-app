@@ -7,7 +7,7 @@ import { Title, Wrapper, PinkTitle, ButtonWrapper } from '@md-ui/card/purchase-c
 const PurchaseCard: React.FC = () => {
   return (
     <Wrapper>
-      <Title>Purchase CluCoin</Title>
+      <Title>Download COIN DeX</Title>
       <PinkTitle>Available on Pancakeswap</PinkTitle>
 
       <ButtonWrapper>

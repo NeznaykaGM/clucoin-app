@@ -47,10 +47,6 @@ export const TokeList = styled.div`
   position: relative;
 `;
 
-export const PinkTokeListItem = styled.p`
-  color: ${({ theme }) => theme.colors.pink300};
-`;
-
 export const DistributionLeftTitle = styled.p`
   font-size: 24px;
   font-weight: 600;

@@ -80,10 +80,6 @@ export const InnerWrapper = styled.div`
 `;
 
 export const LoaderWrapper = styled.div`
-  & > div {
-    height: 24px;
-    width: 24px;
-  }
-
-  margin-left: 8px;
+  max-width: 24px;
+  max-height: 24px;
 `;

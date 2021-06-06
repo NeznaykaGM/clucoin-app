@@ -1,12 +1,8 @@
 import styled from 'styled-components';
-import { Margin } from '@md-shared/types/css';
-import { getMarginStyle } from '@md-shared/helpers/styled';
 
 export interface InputStyle {
   fs?: number;
 }
-
-export type WrapperStyle = Margin;
 
 export const TextInput = styled.input<{
   isValid?: boolean;
@@ -22,16 +18,12 @@ export const TextInput = styled.input<{
   border-radius: 4px;
   border-color: ${({ isValid, theme }) => (isValid ? theme.colors.gray400 : theme.colors.pink400)};
   outline: none;
-
-  :focus {
-    border: 2px solid ${({ isValid, theme }) => isValid && theme.colors.blue500};
-  }
 `;
 
-export const Wrapper = styled.div<{ wrapperStyle?: WrapperStyle }>`
+export const Wrapper = styled.div`
   flex: 1;
   position: relative;
-  ${({ wrapperStyle }) => wrapperStyle && getMarginStyle('wrapperStyle')};
+  margin-bottom: 16px;
 `;
 
 export const Label = styled.div`
