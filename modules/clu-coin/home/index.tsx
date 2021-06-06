@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Welcome from '@md-modules/clu-coin/home/components/pages/welcome';
 import AboutUs from '@md-modules/clu-coin/home/components/pages/about-us';
 import KeyFeatures from '@md-modules/clu-coin/home/components/pages/key-features';
+import Statistics from '@md-modules/clu-coin/home/components/pages/statistics';
 
 export const Wrapper = styled.div`
   width: 100%;
@@ -17,6 +18,7 @@ const Home = () => {
     <Wrapper>
       <Welcome />
       <AboutUs />
+      <Statistics />
       <KeyFeatures />
     </Wrapper>
   );

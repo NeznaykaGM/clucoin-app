@@ -13,13 +13,6 @@ export const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  height: 60px;
-  margin-top: 15px;
-`;
-
 export const Title = styled.p`
   font-size: 40px;
   font-weight: 600;
@@ -34,4 +27,8 @@ export const SubTitle = styled.p`
   font-family: 'Lato', sans-serif;
   margin-block-start: 1em;
   margin-block-end: 1em;
+
+  @media screen and (max-width: 768px) {
+    padding: 10px;
+  }
 `;

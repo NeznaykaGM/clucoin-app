@@ -61,7 +61,7 @@ const Header: React.FC<Props> = ({ expanded, toggleMenu }) => {
             {menuItems.map(({ l, h }) => (
               <MenuItem key={l} href={h} active={isRouteActive(h)} label={l} />
             ))}
-            <Button buttonStyle={BUTTON_STYLES}>Buy Now</Button>
+            <Button buttonStyle={BUTTON_STYLES}>Download</Button>
           </RWrapper>
 
           <IconWrapper>

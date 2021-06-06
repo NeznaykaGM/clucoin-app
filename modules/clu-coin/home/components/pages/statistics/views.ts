@@ -30,6 +30,7 @@ export const Title = styled.p`
 export const DistributionWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 `;
 
 export const DistributionProceedsWrapper = styled.div`
@@ -44,10 +45,6 @@ export const DistributionProceedsWrapper = styled.div`
 export const TokeList = styled.div`
   max-width: 400px;
   position: relative;
-`;
-
-export const TokeListItem = styled.p`
-  text-align: center;
 `;
 
 export const PinkTokeListItem = styled.p`

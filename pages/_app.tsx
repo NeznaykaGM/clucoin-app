@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>CluCoin | Hold, Earn, Help Others</title>
+        <title>COIN DeX | Play, Earn, Have Fun</title>
         <link rel='icon' href='/apple-touch-icon.png' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link href='https://fonts.googleapis.com/css2?family=Poppins&display=swap' rel='stylesheet' />

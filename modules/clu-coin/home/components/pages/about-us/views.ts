@@ -47,7 +47,16 @@ export const MTitle = styled.span`
   }
 `;
 
-export const SubTitle = styled.p``;
+export const SubTitle = styled.p`
+  margin-top: 15px;
+`;
+
+export const PinkSubTitle = styled(SubTitle)`
+  color: ${({ theme }) => theme.colors.pink300};
+  margin: 0;
+  display: inline-block;
+  font-weight: 700;
+`;
 
 export const PinkTitle = styled(Title)`
   color: ${({ theme }) => theme.colors.pink300};

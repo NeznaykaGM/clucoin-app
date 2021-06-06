@@ -9,8 +9,20 @@ export const Wrapper = styled.div`
   padding: 40px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.gary800};
+
+  //&::after {
+  //  content: ' ';
+  //  position: absolute;
+  //
+  //  width: 100%;
+  //  height: 100%;
+  //  background: url(/static/images/82455aaebcd62d127d986eb1018eff1c.png) left center no-repeat;
+  //  background-size: 100px;
+  //  opacity: 0.2;
+  //}
 `;
 
 export const ButtonWrapper = styled.div`

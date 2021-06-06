@@ -136,11 +136,11 @@ const Welcome = () => {
           <RWrapper>
             <LeftSectionWrapper isUserSee={isUserSee}>
               <Title>
-                TOGETHER <PinkTitle>WE CAN</PinkTitle> CHANGE THE WORLD
+                Best <PinkTitle>Game-Mining</PinkTitle> opportunity
               </Title>
 
               <SubTitle>
-                Hyper Deflationary Token with Smart Staking System. Hold, earn and help others in need.
+                Download our software, install it and go to CS:GO or other game and start your mining experience!
               </SubTitle>
             </LeftSectionWrapper>
 

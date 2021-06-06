@@ -1,7 +1,7 @@
 export const menuItems = [
   { l: 'Home', h: '/' },
   { l: 'How to Earn', h: '/how-to-earn' },
-  { l: 'White Paper', h: '/white-paper' },
+  { l: 'About us', h: '/about-us' },
   { l: 'Comments', h: '/comments' }
 ];
 
@@ -10,7 +10,7 @@ export const footerMenuItems = [
   { l: 'Comments', h: '/comments' },
   { l: 'Creator', h: '/' },
   { l: 'Contacts', h: '/' },
-  { l: 'White Paper', h: '/white-paper' }
+  { l: 'About Us', h: '/about-us' }
 ];
 
 export const copyrightMenuItems = [

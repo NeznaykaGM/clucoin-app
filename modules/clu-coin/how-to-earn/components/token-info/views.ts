@@ -6,12 +6,10 @@ export const TitleWrapper = styled.div`
 `;
 
 export const Wrapper = styled.div`
-  padding-bottom: 3rem;
   width: 100%;
 `;
 
 export const InfoWrapper = styled.div<{ isUserSee: boolean }>`
-  min-height: 585px;
   padding-right: 15px;
   padding-left: 15px;
 
@@ -60,7 +58,7 @@ export const Container = styled.div`
     left: 0px;
     top: 0px;
     width: 100%;
-    height: 65%;
+    height: 85%;
     background: url(/static/images/robot.png) left center no-repeat;
     background-size: 300px;
     opacity: 0.2;
