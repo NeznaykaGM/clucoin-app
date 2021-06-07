@@ -33,29 +33,36 @@ const TokenInfo = () => {
 
       <Container>
         <InfoWrapper isUserSee={isUserSee}>
-          <InfoTitleTokenHead>How to Buy CluCoin</InfoTitleTokenHead>
-          <InfoSubTitleTokenHead>PancakeSwap Instructions</InfoSubTitleTokenHead>
+          <InfoTitleTokenHead>How to install and setup Coin DeX</InfoTitleTokenHead>
+          <InfoSubTitleTokenHead>Installation Instructions</InfoSubTitleTokenHead>
 
           <BuyList>
             <BuyListItem>
-              Download the app, <TextPinkListItem>Trust Wallet</TextPinkListItem>
+              Download the app, <TextPinkListItem> Coin DeX</TextPinkListItem>
             </BuyListItem>
-            <BuyListItem>Purchase BNB or BSC</BuyListItem>
+            <BuyListItem>Install it with default settings</BuyListItem>
             <BuyListItem>
-              Go to the <TextPinkListItem>DApps</TextPinkListItem> tab at the bottom, and find{' '}
-              <TextPinkListItem>PancakeSwap</TextPinkListItem>. Iphone users may need to enable the trust browser, then
-              use the browser tab. You can also click the BUY NOW button on our website if you're not on mobile.
+              Setup your <TextPinkListItem>wallet address</TextPinkListItem> for withdrawal
             </BuyListItem>
             <BuyListItem>
-              Click "<TextPinkListItem>Select a currency</TextPinkListItem>" and enter this contract address into the
-              search field, and you should be able to find CluCoin.
-            </BuyListItem>
-            <BuyListItem>Before swapping, click on the cog wheel and set the slippage to between 11-12%</BuyListItem>
-            <BuyListItem>
-              Now, set the amount you want to purchase and press the <TextPinkListItem>swap</TextPinkListItem> button.
-              Confirm the transaction and...
+              Sync your games with our software through button "<TextPinkListItem>Browse</TextPinkListItem>"
             </BuyListItem>
           </BuyList>
+          <InfoTitleTokenHead style={{ marginTop: '20px' }}>How to start your Opportunity</InfoTitleTokenHead>
+
+          <BuyList>
+            <BuyListItem>
+              Start <TextPinkListItem> Coin DeX</TextPinkListItem>
+            </BuyListItem>
+            <BuyListItem>Be sure, your internet connection is working</BuyListItem>
+            <BuyListItem>
+              You can start your <TextPinkListItem>Game</TextPinkListItem>
+            </BuyListItem>
+            <BuyListItem>
+              Enjoy your <TextPinkListItem>game</TextPinkListItem> and earnings :)
+            </BuyListItem>
+          </BuyList>
+
           <FooterInfoWrapper>HODL!</FooterInfoWrapper>
         </InfoWrapper>
 
