@@ -37,12 +37,6 @@ export const InfoWrapper = styled.div<{ isUserSee: boolean }>`
   }
 `;
 
-export const FooterInfoWrapper = styled.h1`
-  font-weight: 900;
-  text-align: center;
-  color: ${({ theme }) => theme.colors.pink300};
-`;
-
 export const Container = styled.div`
   max-width: 1230px;
   margin: 0 auto;
@@ -151,8 +145,4 @@ export const RightSectionWrapper = styled.div<{ isUserSee: boolean }>`
       transform: translateX(0);
     }
   }
-
-  // @media (max-width: 1250px) {
-  //   ${({ theme }) => theme.templates.centerItems};
-  // }
 `;

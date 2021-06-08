@@ -12,17 +12,6 @@ export const Wrapper = styled.div`
   justify-content: center;
   text-align: center;
   background-color: ${({ theme }) => theme.colors.gary800};
-
-  //&::after {
-  //  content: ' ';
-  //  position: absolute;
-  //
-  //  width: 100%;
-  //  height: 100%;
-  //  background: url(/static/images/82455aaebcd62d127d986eb1018eff1c.png) left center no-repeat;
-  //  background-size: 100px;
-  //  opacity: 0.2;
-  //}
 `;
 
 export const ButtonWrapper = styled.div`
@@ -36,11 +25,4 @@ export const Title = styled.span`
   font-family: 'Poppins', sans-serif;
   padding-bottom: 20px;
   color: ${({ theme }) => theme.colors.white};
-`;
-
-export const PinkTitle = styled.span`
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: ${({ theme }) => theme.colors.pink300};
 `;

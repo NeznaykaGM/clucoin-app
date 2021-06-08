@@ -5,7 +5,6 @@ import {
   BuyList,
   BuyListItem,
   Container,
-  FooterInfoWrapper,
   InfoSubTitleTokenHead,
   InfoTitleTokenHead,
   InfoWrapper,
@@ -62,8 +61,6 @@ const TokenInfo = () => {
               Enjoy your <TextPinkListItem>game</TextPinkListItem> and earnings :)
             </BuyListItem>
           </BuyList>
-
-          <FooterInfoWrapper>HODL!</FooterInfoWrapper>
         </InfoWrapper>
 
         <Waypoint onEnter={() => setIsUserSee(true)}>

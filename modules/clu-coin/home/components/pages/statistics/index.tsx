@@ -35,8 +35,8 @@ const Statistics = () => {
           <TokensTitle>Payments</TokensTitle>
 
           <TokenItem title='1-5 hour of game' subTitle='1.5$  per hour' />
-          <TokenItem title='5-12 hour of game ' subTitle='5-12 hour of game' />
-          <TokenItem title='12+ hour of game' subTitle='12+ hour of game' />
+          <TokenItem title='12+ hour of game' subTitle='2.5$ per every next hour' />
+          <TokenItem title='5-12 hour of game ' subTitle='2$ per every next hour (first 5 hours not included)' />
         </TokenInformationWrapper>
 
         <DistributionProceedsWrapper>
