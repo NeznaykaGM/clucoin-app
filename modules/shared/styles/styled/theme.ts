@@ -5,6 +5,7 @@ export const colors = {
   blue500: '#5D19DA',
   blue600: '#5D19DB',
   // gray
+  gray100: '#bbc2ca',
   gray400: '#343A40',
   gary800: '#0A0A0A',
   // pink

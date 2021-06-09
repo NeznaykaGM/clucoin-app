@@ -1,16 +1,20 @@
 import React from 'react';
-import { Wrapper } from './views';
+import { Wrapper, SubTitle } from './views';
 
 interface Props {
   title: string;
   subTitle: string;
+  subTitleFw?: number;
+  subTitleColor?: string;
 }
 
-const TokenItem: React.FC<Props> = ({ title, subTitle }) => {
+const TokenItem: React.FC<Props> = ({ title, subTitle, subTitleFw, subTitleColor }) => {
   return (
     <Wrapper>
       <label>{title}</label>
-      <span>{subTitle}</span>
+      <SubTitle fw={subTitleFw} color={subTitleColor}>
+        {subTitle}
+      </SubTitle>
     </Wrapper>
   );
 };

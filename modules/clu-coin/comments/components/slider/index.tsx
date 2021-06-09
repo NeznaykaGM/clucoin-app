@@ -10,6 +10,9 @@ import { ArrowButton, Dot, SliderWrapper, SWrapper, Wrapper } from './views';
 interface Props {
   comments: {
     id: string;
+    src: string;
+    name: string;
+    rating: string;
     comment: string;
   }[];
 }
@@ -34,7 +37,7 @@ const CommentsSlider: React.FC<Props> = ({ comments }) => {
     speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 5000,
     autoplay: true,
     pauseOnHover: true,
     nextArrow: <ArrowButton src='/static/icons/right-arrow.svg' />,
@@ -46,7 +49,13 @@ const CommentsSlider: React.FC<Props> = ({ comments }) => {
       <SliderWrapper>
         <SWrapper {...sliderSetting}>
           {comments.map((comment) => (
-            <Card text={comment.comment} key={comment.id} />
+            <Card
+              rating={comment.rating}
+              text={comment.comment}
+              key={comment.id}
+              name={comment.name}
+              src={comment.src}
+            />
           ))}
         </SWrapper>
       </SliderWrapper>

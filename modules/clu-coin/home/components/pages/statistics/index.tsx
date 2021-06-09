@@ -1,4 +1,9 @@
 import React from 'react';
+// theme
+import { theme } from '@md-styles/styled/theme';
+// components
+import TokenItem from '@md-modules/clu-coin/home/components/pages/statistics/components/token-item';
+// views
 import {
   DistributionProceedsWrapper,
   DistributionRightTitle,
@@ -11,7 +16,6 @@ import {
   TokensTitle,
   Wrapper
 } from '@md-modules/clu-coin/home/components/pages/statistics/views';
-import TokenItem from '@md-modules/clu-coin/home/components/pages/statistics/components/token-item';
 
 const Statistics = () => {
   return (
@@ -34,9 +38,24 @@ const Statistics = () => {
         <TokenInformationWrapper>
           <TokensTitle>Payments</TokensTitle>
 
-          <TokenItem title='1-5 hour of game' subTitle='1.5$  per hour' />
-          <TokenItem title='12+ hour of game' subTitle='2.5$ per every next hour' />
-          <TokenItem title='5-12 hour of game ' subTitle='2$ per every next hour (first 5 hours not included)' />
+          <TokenItem
+            subTitleFw={700}
+            subTitleColor={theme.colors.pink100}
+            title='1-5 hour of game'
+            subTitle='1.5$  per hour'
+          />
+          <TokenItem
+            subTitleFw={700}
+            subTitleColor={theme.colors.pink100}
+            title='5-12 hour of game '
+            subTitle='2$ per every next hour (first 5 hours not included)'
+          />
+          <TokenItem
+            subTitleFw={700}
+            subTitleColor={theme.colors.pink100}
+            title='12+ hour of game'
+            subTitle='2.5$ per every next hour'
+          />
         </TokenInformationWrapper>
 
         <DistributionProceedsWrapper>
