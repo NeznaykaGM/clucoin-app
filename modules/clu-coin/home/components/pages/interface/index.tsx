@@ -11,7 +11,7 @@ const Interface = () => {
   return (
     <Wrapper>
       <Waypoint onEnter={() => setisUserSeeText(true)}>
-        <Title isUserSeeText={isUserSeeText}>Our application has a very user-friendly interface</Title>
+        <Title isUserSeeText={isUserSeeText}>Our application have a very user-friendly interface</Title>
       </Waypoint>
       <Waypoint onEnter={() => setIsUserSeeImage(true)}>
         <Image isUserSeeImage={isUserSeeImage} src='/static/images/interf.png' alt='interface' />

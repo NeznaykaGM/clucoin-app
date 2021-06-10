@@ -32,15 +32,6 @@ export const LogoWrapper = styled.div`
   padding-bottom: 25px;
 `;
 
-export const IconsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
-export const IconWrapper = styled.div`
-  padding: 0px 5px;
-`;
-
 export const MIWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;

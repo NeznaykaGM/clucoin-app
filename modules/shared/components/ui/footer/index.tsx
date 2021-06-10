@@ -1,15 +1,12 @@
 import React from 'react';
 // components
 import { Logo } from '@md-ui/logos/main';
-import IconButton from '@md-ui/button/icon-button';
 // views
 import {
   Container,
   CopyrightMenuWrapper,
   CopyrightWrapper,
   IBWrapper,
-  IconsWrapper,
-  IconWrapper,
   IWrapper,
   LogoWrapper,
   MenuItemWrapper,
@@ -27,21 +24,6 @@ const Footer = () => {
           <LogoWrapper>
             <Logo />
           </LogoWrapper>
-
-          <IconsWrapper>
-            <IconWrapper>
-              <IconButton src='/static/images/telegram.svg' />
-            </IconWrapper>
-            <IconWrapper>
-              <IconButton src='/static/images/telegram.svg' />
-            </IconWrapper>
-            <IconWrapper>
-              <IconButton src='/static/images/telegram.svg' />
-            </IconWrapper>
-            <IconWrapper>
-              <IconButton src='/static/images/telegram.svg' />
-            </IconWrapper>
-          </IconsWrapper>
         </IBWrapper>
 
         <div>
