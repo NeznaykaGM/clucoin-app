@@ -8,13 +8,14 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   errorText?: string;
   inputStyle?: InputStyle;
   label?: string;
+  height?: number;
 }
 
-const Input: React.FC<InputProps> = ({ errorText, label, placeholder, ...rest }) => {
+const Input: React.FC<InputProps> = ({ errorText, label, height, placeholder, ...rest }) => {
   return (
     <Wrapper>
       {label && <Label>{label}</Label>}
-      <TextInput placeholder={placeholder} isValid={!errorText} {...rest} />
+      <TextInput height={height} placeholder={placeholder} isValid={!errorText} {...rest} />
       <ErrorMessage errorText={errorText} />
     </Wrapper>
   );

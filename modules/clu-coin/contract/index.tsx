@@ -52,7 +52,7 @@ const Contact = () => {
       <From>
         <FormInput name='name' label='Name' control={control} />
         <FormInput label='Email Address' name='email' control={control} />
-        <FormInput name='message' label='Message(optional)' control={control} />
+        <FormInput height={150} name='message' label='Message(optional)' control={control} />
       </From>
 
       <Button isLoading={isLoading} onClick={handleSubmit(onSubmit)}>

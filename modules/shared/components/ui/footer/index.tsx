@@ -55,7 +55,7 @@ const Footer = () => {
         </div>
 
         <CopyrightWrapper>
-          <div>© CluCoin Inc - All Rights Reserved</div>
+          <div>© CluCoin Inc - All Rights Reserved 2020</div>
 
           <CopyrightMenuWrapper>
             {copyrightMenuItems.map(({ l, h }) => (

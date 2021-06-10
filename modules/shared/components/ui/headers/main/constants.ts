@@ -6,15 +6,14 @@ export const menuItems = [
 ];
 
 export const footerMenuItems = [
-  { l: 'Tokens', h: '/' },
+  { l: 'How to Earn', h: '/how-to-earn' },
   { l: 'Comments', h: '/comments' },
-  { l: 'Creator', h: '/' },
   { l: 'Contact us', h: '/contact' },
   { l: 'About Us', h: '/about-us' }
 ];
 
 export const copyrightMenuItems = [
-  { l: 'Terms & Condition', h: '/' },
-  { l: 'Privacy Policy', h: '/' },
+  { l: 'Terms & Condition', h: '/terms' },
+  { l: 'Privacy Policy', h: 'privacy' },
   { l: 'Contact Us', h: '/contact' }
 ];

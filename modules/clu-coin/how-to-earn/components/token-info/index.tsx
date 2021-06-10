@@ -23,10 +23,9 @@ const TokenInfo = () => {
   return (
     <Wrapper>
       <TitleWrapper>
-        <Title>CluCoin Smart Token</Title>
+        <Title>How to Earn Coin DeX software</Title>
         <SubTitle>
-          New to investing in Crypto? This section will guide you how to purchase CluCoin. We'll continue to add market
-          specific instructions as we expand.
+          New in game mining earning? Here you can see instruction how you can start your gaming opportunity.
         </SubTitle>
       </TitleWrapper>
 

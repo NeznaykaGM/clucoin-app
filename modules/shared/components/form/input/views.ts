@@ -6,10 +6,11 @@ export interface InputStyle {
 
 export const TextInput = styled.input<{
   isValid?: boolean;
+  height?: number;
   inputStyle?: InputStyle;
 }>`
   width: 100%;
-  height: 52px;
+  height: ${({ height }) => height || 52}px;
   padding: 16px;
   font-size: 16px;
   color: ${({ theme, isValid }) => (isValid ? theme.colors.gray400 : theme.colors.pink400)};

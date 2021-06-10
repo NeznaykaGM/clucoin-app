@@ -1,6 +1,4 @@
 import * as React from 'react';
-// libs
-import { isMobile } from 'react-device-detect';
 // components
 import Head from 'next/head';
 // providers
@@ -15,14 +13,9 @@ import { GlobalStyles } from '@md-styles/styled/global';
 import { useStore } from '@md-shared/hooks/use-store';
 // global css
 import 'normalize.css/normalize.css';
-// components
-import WelcomeModal from '@md-ui/modal/welcom-modal';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialReduxState);
-  const [userAgreed, setUserAgreed] = React.useState(false);
-
-  const toggleModal = () => setUserAgreed((prevState) => !prevState);
 
   return (
     <>
@@ -35,7 +28,6 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta charSet='utf-8' />
       </Head>
       <ThemeProvider theme={theme}>
-        <WelcomeModal toggleModal={toggleModal} isOpen={isMobile && !userAgreed} />
         <Provider store={store}>
           <Component {...pageProps} />
         </Provider>
