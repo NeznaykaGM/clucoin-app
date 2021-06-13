@@ -35,7 +35,8 @@ export const LogoWrapper = styled.div`
 export const MIWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 390px;
+  width: 100%;
+  max-width: 390px;
 
   @media (max-width: 768px) {
     margin-top: 20px;

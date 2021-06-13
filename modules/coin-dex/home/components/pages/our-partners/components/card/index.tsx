@@ -9,7 +9,7 @@ import {
   Title,
   Content,
   Wrapper
-} from '@md-modules/coin-dex/home/components/pages/key-features/components/card/views';
+} from '@md-modules/coin-dex/home/components/pages/our-partners/components/card/views';
 
 interface Props {
   src?: string;

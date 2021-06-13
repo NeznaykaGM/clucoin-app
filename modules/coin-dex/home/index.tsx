@@ -4,7 +4,7 @@ import styled from 'styled-components';
 // components
 import Welcome from '@md-modules/coin-dex/home/components/pages/welcome';
 import AboutUs from '@md-modules/coin-dex/home/components/pages/about-us';
-import KeyFeatures from '@md-modules/coin-dex/home/components/pages/key-features';
+import OurPartners from '@md-modules/coin-dex/home/components/pages/our-partners';
 import Statistics from '@md-modules/coin-dex/home/components/pages/statistics';
 import Interface from '@md-modules/coin-dex/home/components/pages/interface';
 
@@ -21,7 +21,7 @@ const Home = () => {
       <AboutUs />
       <Statistics />
       <Interface />
-      <KeyFeatures />
+      <OurPartners />
     </Wrapper>
   );
 };

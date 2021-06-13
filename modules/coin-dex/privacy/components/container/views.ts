@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   margin-bottom: 0.5rem !important;
+  padding-right: 15px;
+  padding-left: 15px;
 
   p {
     font-size: 12px;

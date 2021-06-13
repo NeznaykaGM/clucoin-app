@@ -89,6 +89,10 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
   @media (max-width: 1250px) {
     padding: 0px 20px;
   }
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+  }
 `;
 
 export const Image = styled.img`
