@@ -1,8 +1,13 @@
 import React from 'react';
 import { MainLayout } from '@md-shared/layouts/main';
+import Privacy from '@md-modules/coin-dex/privacy';
 
-const Privacy = () => {
-  return <MainLayout></MainLayout>;
+const PrivacyPage = () => {
+  return (
+    <MainLayout>
+      <Privacy />
+    </MainLayout>
+  );
 };
 
-export default Privacy;
+export default PrivacyPage;

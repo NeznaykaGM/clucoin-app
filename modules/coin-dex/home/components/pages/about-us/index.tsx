@@ -12,7 +12,7 @@ import {
   Image,
   LeftSectionWrapper,
   PinkSubTitle
-} from '@md-modules/clu-coin/home/components/pages/about-us/views';
+} from '@md-modules/coin-dex/home/components/pages/about-us/views';
 
 const AboutUs = () => {
   const [isUserSee, setIsUserSee] = React.useState(false);

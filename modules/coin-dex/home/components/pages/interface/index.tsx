@@ -2,7 +2,7 @@ import React from 'react';
 // libs
 import { Waypoint } from 'react-waypoint';
 // views
-import { Image, Title, Wrapper } from '@md-modules/clu-coin/home/components/pages/interface/views';
+import { Image, Title, Wrapper } from '@md-modules/coin-dex/home/components/pages/interface/views';
 
 const Interface = () => {
   const [isUserSeeImage, setIsUserSeeImage] = React.useState(false);

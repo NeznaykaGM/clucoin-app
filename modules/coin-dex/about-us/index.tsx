@@ -1,7 +1,7 @@
 import React from 'react';
-import { SubTitle, Title, Wrapper } from '@md-modules/clu-coin/about-us/views';
-import ImagesSlider from '@md-modules/clu-coin/about-us/components/slider';
-import { imagesState } from '@md-modules/clu-coin/about-us/constants';
+import { SubTitle, Title, Wrapper } from '@md-modules/coin-dex/about-us/views';
+import ImagesSlider from '@md-modules/coin-dex/about-us/components/slider';
+import { imagesState } from '@md-modules/coin-dex/about-us/constants';
 
 const AboutUs = () => {
   return (

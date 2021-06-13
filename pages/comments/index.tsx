@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainLayout } from '@md-shared/layouts/main';
-import Comments from '@md-modules/clu-coin/comments';
+import Comments from '@md-modules/coin-dex/comments';
 
 const RoadMapPage = () => {
   return (

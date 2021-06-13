@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '@md-modules/clu-coin/contract';
+import Contact from '@md-modules/coin-dex/contract';
 import { MainLayout } from '@md-shared/layouts/main';
 
 const ContactPage = () => {

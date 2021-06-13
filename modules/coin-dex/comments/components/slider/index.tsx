@@ -3,7 +3,7 @@ import React from 'react';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // components
-import Card from '@md-modules/clu-coin/comments/components/card';
+import Card from '@md-modules/coin-dex/comments/components/card';
 // views
 import { ArrowButton, Dot, SliderWrapper, SWrapper, Wrapper } from './views';
 

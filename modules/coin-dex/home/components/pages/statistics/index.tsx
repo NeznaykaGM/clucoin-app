@@ -2,7 +2,7 @@ import React from 'react';
 // theme
 import { theme } from '@md-styles/styled/theme';
 // components
-import TokenItem from '@md-modules/clu-coin/home/components/pages/statistics/components/token-item';
+import TokenItem from '@md-modules/coin-dex/home/components/pages/statistics/components/token-item';
 // views
 import {
   DistributionProceedsWrapper,
@@ -15,7 +15,7 @@ import {
   TokenInformationWrapper,
   TokensTitle,
   Wrapper
-} from '@md-modules/clu-coin/home/components/pages/statistics/views';
+} from '@md-modules/coin-dex/home/components/pages/statistics/views';
 
 const Statistics = () => {
   return (

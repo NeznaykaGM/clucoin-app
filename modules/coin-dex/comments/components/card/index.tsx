@@ -2,7 +2,7 @@ import React from 'react';
 // libs
 
 // components
-import UserInfo from '@md-modules/clu-coin/comments/components/user-info';
+import UserInfo from '@md-modules/coin-dex/comments/components/user-info';
 // views
 import { CWrapper, Wrapper } from './views';
 

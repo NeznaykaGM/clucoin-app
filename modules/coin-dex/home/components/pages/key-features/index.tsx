@@ -2,7 +2,7 @@ import React from 'react';
 // libs
 import { Waypoint } from 'react-waypoint';
 // constants
-import { partnersState } from '@md-modules/clu-coin/home/components/pages/key-features/constants';
+import { partnersState } from '@md-modules/coin-dex/home/components/pages/key-features/constants';
 // views
 import {
   Title,
@@ -12,7 +12,7 @@ import {
   ContentWrapper,
   CardsWrapper,
   Image
-} from '@md-modules/clu-coin/home/components/pages/key-features/views';
+} from '@md-modules/coin-dex/home/components/pages/key-features/views';
 
 const KeyFeatures = () => {
   const [isUserSee, setIsUserSee] = React.useState(false);

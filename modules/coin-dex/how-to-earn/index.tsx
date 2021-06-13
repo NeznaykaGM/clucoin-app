@@ -1,8 +1,8 @@
 import React from 'react';
 // components
-import TokenInfo from '@md-modules/clu-coin/how-to-earn/components/token-info';
+import TokenInfo from '@md-modules/coin-dex/how-to-earn/components/token-info';
 // views
-import { Wrapper } from '@md-modules/clu-coin/how-to-earn/views';
+import { Wrapper } from '@md-modules/coin-dex/how-to-earn/views';
 
 const HowToBuy = () => {
   return (

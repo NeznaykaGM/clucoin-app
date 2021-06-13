@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainLayout } from '@md-shared/layouts/main';
-import AboutUs from '@md-modules/clu-coin/about-us';
+import AboutUs from '@md-modules/coin-dex/about-us';
 
 const WhitePaperPage = () => {
   return (

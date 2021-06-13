@@ -1,10 +1,10 @@
 import React from 'react';
 // constants
-import { commentsState } from '@md-modules/clu-coin/comments/constants';
+import { commentsState } from '@md-modules/coin-dex/comments/constants';
 // components
-import CommentsSlider from '@md-modules/clu-coin/comments/components/slider';
+import CommentsSlider from '@md-modules/coin-dex/comments/components/slider';
 // views
-import { SliderWrapper, SubTitle, Title, Wrapper } from '@md-modules/clu-coin/comments/views';
+import { SliderWrapper, SubTitle, Title, Wrapper } from '@md-modules/coin-dex/comments/views';
 
 const Comments = () => {
   return (
