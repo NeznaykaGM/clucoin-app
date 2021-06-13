@@ -1,4 +1,9 @@
 import * as React from 'react';
+// libs
+import Router from 'next/router';
+// @ts-ignore
+import NProgress from 'nprogress';
+import 'nprogress/nprogress.css';
 // components
 import Head from 'next/head';
 // providers
@@ -13,6 +18,10 @@ import { GlobalStyles } from '@md-styles/styled/global';
 import { useStore } from '@md-shared/hooks/use-store';
 // global css
 import 'normalize.css/normalize.css';
+
+Router.events.on('routeChangeStart', () => NProgress.start());
+Router.events.on('routeChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const store = useStore(pageProps.initialReduxState);
