@@ -34,7 +34,7 @@ const OurPartners = () => {
         <CardsWrapper isUserSee={isUserSee}>
           {partnersState.map((i) => (
             <a key={i.id} href={i.url}>
-              <Image src={i.src} />
+              <Image isInverted={i.isInverted} src={i.src} />
             </a>
           ))}
         </CardsWrapper>

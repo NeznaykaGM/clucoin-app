@@ -95,14 +95,14 @@ export const CardsWrapper = styled.div<{ isUserSee: boolean }>`
   }
 `;
 
-export const Image = styled.img`
+export const Image = styled.img<{ isInverted?: boolean }>`
   width: 100%;
   height: 100%;
-  background: ${({ theme }) => theme.colors.gray400};
 
   padding: 10px;
-  border: 1px solid ${({ theme }) => theme.colors.gary800};
   max-width: 390px;
   max-height: 120px;
   cursor: pointer;
+
+  filter: ${({ isInverted }) => isInverted && 'invert()'};
 `;
